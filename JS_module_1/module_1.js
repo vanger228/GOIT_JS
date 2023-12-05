@@ -19,7 +19,7 @@
 // let r = null;
 // console.log(typeof r);
 
-// ------------------lms hw-------------------
+// ------------------lms -------------------
 
 // --------comparison operators-----------
 // Додай код, який записує у змінні наступні значення:
@@ -126,3 +126,61 @@
 // add(15, 27, 10);
 // add(10, 20, 30);
 // add(5, 10, 15);
+
+// ----------Return equals----------
+// function multiply(x, y, z) {
+//   return x * y * z;
+// }
+// const result = multiply(2, 3, 5);
+// console.log(result); // 30
+// return перериває функцію, всі операції після return в функуії скіпаються
+// if we use const instead return, output = undefined
+
+// --------------послідовність виконання коду----------
+
+// console.log("Log before all");
+// function multiply(x, y, z) {
+//   console.log(`Result: ${x * y * z}`);
+// }
+
+// console.log("Log before multiply execution");
+// multiply(2, 3, 5); // "Result: 30"
+// console.log("Log after multiply execution");
+
+// Послідовність логів у консолі буде такою:
+// "Log before all"
+// "Log before multiply execution"
+// "Result: 30"
+// "Log after multiply execution"
+
+// ----------Область видимості функції--------
+// глобальна змінна може бути використана в будьякій чпстині уоду і в середині функції
+// локальна змінна(яка оголошена в середині функції) видима тільки в сер функції
+
+// function foo() {
+// 	// Локальна змінна
+// 	const value = "I'm a local variable";
+// 	// Можна звернутися до локальної змінної
+// 	console.log(value); // "I'm a local variable"
+// }
+
+// foo();
+//   console.log(value); // ReferenceError: value is not defined
+//                       // Помилка: локальну змінну не видно за межами
+//                          функції
+
+// task
+
+// function makeMessage(name, price) {
+//   return `"You picked ${name}, price per item is ${price} credits"`;
+// }
+// const result = makeMessage("Mir", 300);
+// console.log(result);
+
+// function calculateTotalPrice(orderedQuantity, pricePerItem) {
+//   return orderedQuantity * pricePerItem;
+// }
+
+// var totalPrice = calculateTotalPrice(5, 100);
+
+// console.log(totalPrice);
