@@ -174,7 +174,7 @@
 
 function checkPassword(password) {
   const correctPassword = "jqueryismyjam";
-  password === correctPassword
+  return password === correctPassword
     ? "Access granted"
     : "Access denied, wrong password!";
 }
