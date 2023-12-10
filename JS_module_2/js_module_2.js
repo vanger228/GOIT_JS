@@ -165,6 +165,8 @@
 
 // console.log(biggerNumber); // 10
 
+// exersise
+
 // Функція checkPassword(password) порівнює переданий їй пароль (параметр password) зі збереженим паролем адміністратора (correctPassword) і повертає рядок з повідомленням про результат.
 
 // Використовуючи тернарний оператор, доповни функцію таким чином, щоб:
@@ -172,12 +174,80 @@
 // Якщо значення password і correctPassword збігаються, функція повертала рядок "Access granted"
 // В іншому випадку, функція повертала рядок "Access denied, wrong password!"
 
-function checkPassword(password) {
-  const correctPassword = "jqueryismyjam";
-  return password === correctPassword
-    ? "Access granted"
-    : "Access denied, wrong password!";
-}
-let password = "jqueryismyjam";
-const result = checkPassword(password);
-console.log(result);
+// function checkPassword(password) {
+//   const correctPassword = "jqueryismyjam";
+//   return password === correctPassword
+//     ? "Access granted"
+//     : "Access denied, wrong password!";
+// }
+// let password = "jqueryismyjam";
+// const result = checkPassword(password);
+// console.log(result);
+
+// Оператор switch-----------
+
+// Вираз (expression) в операторі switch обчислюється.
+// Значення виразу порівнюється з кожним блоком case зверху вниз.
+// Якщо значення виразу відповідає значенню в блоці case, виконується код цього блоку.
+// Коли виконання коду блоку case завершено, необхідно використовувати оператор break, щоб вийти зі switch. Це запобігає виконанню коду в наступних блоках case.
+// Якщо жодне значення не відповідає виразу, виконається код у блоці default (якщо він є).
+
+// const fruit = "orange";
+
+// switch (fruit) {
+//   case "apple":
+//     console.log("Apple selected");
+//     break;
+//   case "banana":
+//     console.log("Banana selected");
+//     break;
+//   case "orange":
+//     console.log("Orange selected");
+//     break;
+//   default:
+//     console.log("The fruit is unknown");
+// }
+
+// Функція getSubscriptionPrice(type) отримує рядок з типом передплати користувача (параметр type), перевіряє її на збіг з трьома можливими типами щомісячної передплати та повертає ціну, або повідомлення про неправильний тип передплати.
+
+// Якщо значення параметра type — це рядок:
+
+// "starter" — ціна передплати 0 кредитів.
+// "professional" — ціна передплати 20 кредитів.
+// "organization" — ціна передплати 50 кредитів.
+// Для будь-якого іншого значення параметра type повертається рядок "Invalid subscription type!".
+
+// Використай оператор switch для розв'язання цієї задачі!
+
+// function getSubscriptionPrice(type) {
+//   switch (type) {
+//     case "starter":
+//       return 0;
+//     case "professional":
+//       return 20;
+//     case "organization":
+//       return 50;
+//     default:
+//       return "Invalid subscription type!";
+//   }
+// }
+
+// let type = "professional";
+// const result = getSubscriptionPrice(type);
+// console.log(result);
+
+// =======================
+
+// Пам’ятка під час використання розгалужень
+
+// Наразі тобі знайомі кілька способів, як зробити розгалуження. Під час вибору слід пам’ятати:
+
+// Інструкція if є універсальною. Інструкції if…else і else…if використовуються, коли потрібно прописати декілька умов. Отже, ці інструкції зазвичай довші, ніж інші способи розгалужень.
+// Тернарний оператор краще використовувати для присвоєння або повернення значення з тіла функції. В умові тернарного оператора може бути все що завгодно: перевірка рівності / нерівності, на більше / менше, просто перевірка на буль чого-небудь.
+// Пам’ятай про обмеження: у нього має бути рівно 2 сценарії, не більше.
+// Оператор switch перевіряє тільки на сувору рівність.
+// Використовуючи оператор switch, завжди:
+// — пам’ятай про оператор break
+// — використовуй тільки 1 default, він завжди має бути останнім.
+
+// ===================
