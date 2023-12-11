@@ -232,10 +232,8 @@
 //   }
 // }
 
-// let type = "professional";
-// const result = getSubscriptionPrice(type);
+// const result = getSubscriptionPrice("professional");
 // console.log(result);
-
 // =======================
 
 // Пам’ятка під час використання розгалужень
@@ -251,3 +249,106 @@
 // — використовуй тільки 1 default, він завжди має бути останнім.
 
 // ===================
+
+// Оператор “І” зліва направо перевіряє почергово обидва операнди на істинність та повертає або значення останнього істинного (тільки правого) операнда, або першого хибного (лівого чи правого), на якому він запнувся.
+// const screenWidth = 1400;
+// const sm = 320;
+// const md = 768;
+// const lg = 1200;
+
+// if (screenWidth <= sm) {
+//   console.log("Mobile screen");
+// } else if (screenWidth > sm && screenWidth <= md) {
+//   console.log("Tablet screen");
+// } else if (screenWidth > md && screenWidth <= lg) {
+//   console.log("Desktop screen");
+// } else {
+//   console.log("Godzilla screen");
+// }
+// Приклад вище має ланцюжок перевірок, розглянемо їх.
+
+// Спочатку перевіряється умова if, тобто 700 < 320, вона повертає false, тому тіло блоку if ігнорується і виконання коду переходить далі до блоку else...if.
+
+// У ньому є умова screenWidth > sm && screenWidth ≤ md.
+
+// Спочатку обчислиться лівий операнд, умова 700 > 320 , яка поверне true , потім правий — 700 <= 768 , який теж поверне true.
+
+// Оскільки обидва операнди істинні, то true && true поверне значення крайнього істинного операнда, тобто true . Завдяки тому, що в умові інструкції else...if буде true, виконається її тіло і в консоль виведеться рядок “Tablet screen”
+
+// null && true //null
+
+// якщо хоча б один із операндів буде приведений до false, результатом буде значення хибного операнда. Маємо операнди null і true. Ще з теми Перетворення типів: логічне знаємо, що null — перетворюються на false, тобто є хибним. Саме це значення буде результатом виразу.
+
+// Запам’ятай 6 випадків, які приводяться до false:
+// 0
+// ""
+// NaN
+// null
+// undefined
+// false
+
+// Функція isNumberInRange(start, end, number) перевіряє, чи входить число у проміжок. Вона оголошує три параметри, значення яких будуть задаватися під час її виклику:
+
+// number - число, входження якого перевіряється
+// start - початок числового проміжку
+// end - кінець числового проміжку
+// Використовуючи оператор &&, доповни функцію isNumberInRange таким чином, щоб вона повертала результат входження number у числовий проміжок від start до end включно. Тобто число повинно бути одночасно і більшим або дорівнювати start, і меншим або дорівнювати end. Результатом виклику функції має бути буль true або false.
+
+// function isNumberInRange(start, end, number) {
+//   if (number >= start && number <= end) {
+//     return true;
+//   } else if (number < start || number > end) {
+//     return false;
+//   }
+// }
+// const a = isNumberInRange(10, 20, 22);
+// console.log(a);
+
+// ---------
+// Логічне «АБО»
+// Оператор "АБО" (||) перетворює всі операнди до логічного типу (true або false) і повертає значення одного з них.
+// Дозволяє перевіряти, чи є хоча б один із операндів "істинним”.
+// Обчислення оператора відбувається зліва направо.
+
+// Оператор "АБО" замикається на вірному операнді і повертає значення операнда, на якому запнувся, або значення крайнього правого операнда. Якщо лівий операнд був перетворений на true, правий операнд не обчислюється.
+// const a = 5;
+// console.log(a < 10 || a > 30); // true || false -> true
+
+// const b = 50;
+// console.log(b < 10 || b > 30); // false || true -> true
+
+// const c = 20;
+// console.log(c - 20 || c * 2); // 0 || 40 -> 40
+
+// exersise
+// Функція checkAccess(subType) перевіряє, чи може користувач отримати доступ до контенту. Перевірка відбувається за типом передплати. Використовуючи оператор "АБО", доповни код функції так, щоб якщо значення параметра subType дорівнює рядкам "pro" або "vip", то функція повертала true і користувач отримував доступ. В іншому випадку повертала false.
+
+// function checkAccess(subType) {
+//   if (subType == "pro" || subType == "vip") {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
+// const result = checkAccess("vip");
+// console.log(result);
+
+// logic NO--------
+
+// Логічне «НІ» приводить операнд до логічного значення (true або false) і потім заперечує (інвертує) його, тобто заміняє на протилежне: true —> false, а false —> true.
+// console.log(!true); // false
+// console.log(!false); // true
+// console.log(!3); // !3 -> !true -> false
+// console.log(!"Mango"); // !"Mango" -> !true -> false
+// console.log(!0); // !0 -> !false -> true
+// console.log(!""); // !"" -> !false -> true
+// console.log(!null); // !null -> !false -> true
+
+const isBlocked = false;
+const canChat = !isBlocked; // !false -> true
+
+if (canChat) {
+  console.log("Can type in chat!");
+} else {
+  console.log("Blocked from typing in chat!");
+}
