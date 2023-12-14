@@ -450,3 +450,23 @@ function checkForName(fullName, firstName) {
 }
 let result = checkForName("Miroslav Vakul", "mir");
 console.log(result);
+
+// function toggleModalVisibility(isVisible) {
+//   return !isVisible;
+// }
+// let isVisible = false
+// const a = toggleModalVisibility(isVisible);
+// console.log(a)
+
+// Функція getSubstring(string, length) приймає рядок і повертає новий підрядок (його часткову копію). Вона оголошує два параметри, значення яких будуть задаватися під час її виклику:
+
+//     string - оригінальний рядок
+//     length - довжина нового підрядка
+
+// Доповни код функції так, щоб вона повертала новий підрядок, який починається від початку string і має довжину length.
+// function getSubstring(string, length) {
+//   return string.slice(0, length)
+// }
+// let length = 3;
+// let string = 'declar'
+// console.log(getSubstring(string, length))
