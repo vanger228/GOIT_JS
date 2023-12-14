@@ -155,7 +155,6 @@
 // } else {
 //   biggerNumber = b;
 // }
-
 // console.log(biggerNumber); // 10
 
 // тепер тернарним
@@ -344,11 +343,110 @@
 // console.log(!""); // !"" -> !false -> true
 // console.log(!null); // !null -> !false -> true
 
-const isBlocked = false;
-const canChat = !isBlocked; // !false -> true
+// const isBlocked = false;
+// const canChat = !isBlocked; // !false -> true
 
-if (canChat) {
-  console.log("Can type in chat!");
-} else {
-  console.log("Blocked from typing in chat!");
+// if (canChat) {
+//   console.log("Can type in chat!");
+// } else {
+//   console.log("Blocked from typing in chat!");
+// }
+
+// ------METHODS-----------------------
+
+// method length - return length of string
+// const message = "JavaScript is awesome";
+// console.log(message.length); // 21
+
+// const message = "JavaScript is awesome";
+// console.log(message.toUpperCase()); // "JAVASCRIPT IS AWESOME"
+
+// Метод slice()
+// str.slice(startIndex, endIndex);
+// str — вихідний рядок, з якого робитиметься копія.
+// startIndex — індекс, з якого починається копіювання елементів рядка.
+// endIndex — індекс, до якого (не включаючи) йде копіювання елементів рядка.
+
+// const fullName = "Jacob Mercer";
+// const firstName = fullName.slice(0, 5);
+// const lastName = fullName.slice(6);
+
+// console.log(fullName); // "Jacob Mercer"
+// console.log(firstName); // "Jacob"
+// console.log(lastName); // "Mercer"
+
+// =-------Методи toLowerCase() і toUpperCase()
+
+// const message = "Welcome to Bahamas!";
+// console.log(message.toLowerCase()); // "welcome to bahamas!"
+// console.log(message); // "Welcome to Bahamas!"
+
+// const message = "Welcome to Bahamas!";
+// console.log(message.toUpperCase()); // "WELCOME TO BAHAMAS!"
+// console.log(message); // "Welcome to Bahamas!"
+
+// Функція normalizeInput(input, to) оголошує два параметри:
+
+// input - рядок, який потрібно привести до певного регістру
+// to - рядок с двома можливими значеннями: "upper" або "lower", що вказують до якого регістру потрібно привести значення input
+// Доповни код функції таким чином, щоб:
+
+// Якщо значення параметра to — це рядок "upper", то функція повертала копію рядка input, але у верхньому регістрі
+// В іншому разі, функція повертала копію рядка inputу нижньому регістрі
+
+// function normalizeInput(input, to) {
+//   if (to == "upper") {
+//     return input.toUpperCase();
+//   } else {
+//     return input.toLowerCase();
+//   }
+// }
+// let result = normalizeInput("FerFgk", "upper");
+// console.log(result);
+
+// method includes()
+// str.includes(substring)
+// де:
+// str — вихідний рядок, у якому ми шукаємо підрядок;
+// substring — підрядок, який ми хочемо знайти у вихідному рядку.
+// const username = 'Jacob Mercer';
+// console.log(username.includes('Jacob')); // true
+// console.log(username.includes('John')); // false
+
+// Метод includes() корисний, коли нам необхідно виконати зазначені дії за умови, коли рядок містить певний підрядок.
+// const message = "Please buy our stuff!";
+// const hasSpam = message.includes("buy");
+
+// if (hasSpam) {
+//   console.log("Warning: This message contains forbidden words.");
+// } else {
+//   console.log("You can safely open this message.");
+// }
+
+// Функція checkForName(fullName, firstName) приймає два параметри та повертає буль true або false - результат перевірки входження підрядка firstName у рядок fullName.
+
+// fullName - рядок, що містить повне ім'я
+// firstName - рядок, що містить ім'я для перевірки його входження в повне ім'я
+// Доповни тіло функції таким чином, щоб вона повертала результат перевірки входження імені (параметр firstName), у повне ім'я (параметр fullName). Врахуй, що регістр символів в параметрах fullName і firstName наперед не відомий. Перед перевіркою входження не забудь прирівняти їх до однакового регістру.
+
+// function checkForName(fullName, firstName) {
+//   fullName = fullName.toLowerCase();
+//   firstName = firstName.toLowerCase();
+//   if (fullName.includes(firstName)) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
+// let result = checkForName("Miroslav Vakul", "mir");
+// console.log(result);
+
+// тепер тернарним
+
+function checkForName(fullName, firstName) {
+  return fullName.toLowerCase().includes(firstName.toLowerCase())
+    ? true
+    : false;
 }
+let result = checkForName("Miroslav Vakul", "mir");
+console.log(result);

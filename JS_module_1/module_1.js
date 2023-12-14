@@ -102,10 +102,11 @@
 // // function call
 // sayHi();
 
-// // parameters declaration x, y, z
+// parameters declaration x, y, z
 // function multiply(x, y, z) {
 //   console.log(`Result: ${x * y * z}`);
 // }
+// multiply(2, 3, 4);
 
 // // passing arguments
 // multiply(2, 3, 5); // "Result: 30"
