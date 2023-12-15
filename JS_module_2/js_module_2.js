@@ -555,3 +555,44 @@
 // console.log(createFileName("  trhj   ", "ref"));
 
 // ================= Цикли ===============
+// while (condition) {
+//   statement; // код, тіло циклу
+// }
+
+// let count = 0;
+// while (count < 10) {
+//   console.log(`Count: ${count}`);
+//   count += 3;
+// }
+// console.log(count);
+
+// Функція calculateTotal(number) приймає ціле число (параметр number). Доповни код функції так, щоб вона повертала суму всіх цілих чисел від одиниці до цього числа включно. Наприклад, якщо number дорівнює 3, то сума - це 1 + 2 + 3, тобто 6.
+// function calculateTotal(number) {
+//   let total = 0;
+//   let i = 1;
+//   while (i <= number) {
+//     total += i;
+//     i++;
+//   }
+//   return total;
+// }
+
+// console.log(calculateTotal(3));
+
+// -----do while
+
+// let count = 4;
+
+// do {
+//   console.log(`Count: ${count}`);
+//   count += 2;
+// } while (count < 20);
+
+// ------ for----
+// for (let i = 2; i <= 100; i += 2) {
+//   console.log(i);
+// }
+
+// Функція calculateTotal(number) приймає ціле число (параметр number) Використовуючи цикл for, доповни код функції так, щоб вона повертала суму всіх цілих чисел від одиниці до цього числа включно. Наприклад, якщо number дорівнює 3, то сума - це 1 + 2 + 3, тобто 6.
+
+// Сума = (n⋅(n+1))/2
