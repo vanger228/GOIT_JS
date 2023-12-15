@@ -443,13 +443,13 @@
 
 // тепер тернарним
 
-function checkForName(fullName, firstName) {
-  return fullName.toLowerCase().includes(firstName.toLowerCase())
-    ? true
-    : false;
-}
-let result = checkForName("Miroslav Vakul", "mir");
-console.log(result);
+// function checkForName(fullName, firstName) {
+//   return fullName.toLowerCase().includes(firstName.toLowerCase())
+//     ? true
+//     : false;
+// }
+// let result = checkForName("Miroslav Vakul", "mir");
+// console.log(result);
 
 // function toggleModalVisibility(isVisible) {
 //   return !isVisible;
@@ -465,8 +465,93 @@ console.log(result);
 
 // Доповни код функції так, щоб вона повертала новий підрядок, який починається від початку string і має довжину length.
 // function getSubstring(string, length) {
-//   return string.slice(0, length)
+//   return string.slice(0, length);
 // }
 // let length = 3;
-// let string = 'declar'
-// console.log(getSubstring(string, length))
+// let string = "declar";
+// console.log(getSubstring(string, length));
+
+// ----------Метод endsWith()
+// Метод endsWith() перевіряє, чи закінчується рядок вказаним підрядком.
+// str.endsWith(substr)
+
+// Функція checkFileExtension(fileName, ext) приймає два параметри:
+// fileName - рядок, що зберігає ім'я файлу з розширенням, наприклад, styles.css, hello.js тощо.
+// ext - рядок, що зберігає розширення, наприклад, .css, .js тощо
+// Доповни код функції так, щоб:
+// Якщо ім'я файлу fileName закінчується розширенням, зазначеним у параметрі ext, то функція повертала рядок "File extension matches"
+// В іншому разі, функція повертала рядок "File extension does not match"
+
+// function checkFileExtension(fileName, ext) {
+//   return fileName.endsWith(ext)
+//     ? "File extension matches"
+//     : "File extension does not match";
+// }
+
+// let fileName = "tlf.zip";
+// let ext = ".zip";
+// console.log(checkFileExtension(fileName, ext));
+
+// -------Метод indexOf()
+
+// Метод indexOf() використовується для пошуку першого входження підрядка в рядок. Він повертає:
+// індекс першого входження (індекс першого символу) підрядка, якщо він знайдений або
+// -1, якщо підрядок не виявлено
+
+// let a = "robert";
+// let b = a.indexOf("t");
+// console.log(b);
+
+// Функція getFileName(file) приймає один параметр
+
+// file - рядок з іменем файлу. Ім'я файлу може бути з розширенням, наприклад: styles.css, app.js або без, наприклад: styles, app.
+// Використовуючи методи indexOf та slice, доповни код функції таким чином, щоб:
+
+// Вона перевіряла наявність розширення в імені файлу (назва розширення відокремлюється від імені файла крапкою)
+// Якщо ім'я файлу не містить розширення, то функція повертала новий підрядок, що містить ім'я файлу без змін
+// В іншому разі функція повертала підрядок з іменем файлу, але без розширення
+
+// function getFileName(file) {
+//   const positionDot = file.indexOf(".");
+//   if (positionDot !== -1 && positionDot > 0) {
+//     return `${file}`;
+//   } else {
+//     return file.slice(0, positionDot);
+//   }
+// }
+// console.log(getFileName("reg.reg"));
+
+// function getFileName(file) {
+//   // const positionDot = file.indexOf("."); в рівняння для скорочення можна вставляти відразу метод, так const не потрібна
+//   if (file.indexOf(".") == -1) {
+//     return `${file}`;
+//   } else {
+//     return file.slice(0, file.indexOf("."));
+//   }
+// }
+// console.log(getFileName("reg.rg"));
+
+// тепер тернарним-------
+
+// function getFileName(file) {
+//   return file.indexOf(".") == -1 ? `${file}` : file.slice(0, file.indexOf("."));
+// }
+// console.log(getFileName("reg.rg"));
+
+// --
+// Метод trim()
+// Метод trim() використовується для видалення початкових і кінцевих пробілів із рядка.
+// str.trim();
+
+// Функція createFileName(name, ext) приймає два параметри:
+
+// name - рядок, що зберігає ім'я файлу без розширення, яке вводить користувач. Воно може містити зайві пробіли на початку або в кінці рядка, наприклад "order ", " finance " тощо
+// ext - рядок, що зберігає розширення, наприклад "txt", "xml" тощо
+// Використовуючи синтаксис шаблонних рядків і метод trim(), доповни код функції таким чином, щоб вона повертала повне (об'єднане) ім'я файлу з доданим розширенням, зазначеним у параметрі ext у форматі ім'я.розширення. Також повне ім'я файлу не повинно містити зайвих пробілів на початку або наприкінці.
+
+// function createFileName(name, ext) {
+//   return name.trim() + "." + ext;
+// }
+// console.log(createFileName("  trhj   ", "ref"));
+
+// ================= Цикли ===============
