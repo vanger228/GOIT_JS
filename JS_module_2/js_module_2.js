@@ -593,6 +593,67 @@
 //   console.log(i);
 // }
 
+// !!!!!------задачку недопоняв--------
+
 // Функція calculateTotal(number) приймає ціле число (параметр number) Використовуючи цикл for, доповни код функції так, щоб вона повертала суму всіх цілих чисел від одиниці до цього числа включно. Наприклад, якщо number дорівнює 3, то сума - це 1 + 2 + 3, тобто 6.
 
-// Сума = (n⋅(n+1))/2
+// function calculateTotal(number) {
+//   let sum = 0;
+//   for (let i = 1; i <= number; i++) {
+//     sum += i;
+//   }
+//   return sum;
+// }
+
+// console.log(calculateTotal(3));
+
+// -------інкремент-------
+// проефіксний - (++value) спочатку збільшує значення змінної, а потім використовує нове значення у виразі.
+// let x = 5;
+// const y = ++x;
+// console.log(x); // 6
+// console.log(y); // 6
+
+// Постфіксний інкремент (value++) спочатку використовує поточне значення змінної у виразі, а потім виконує збільшення значення.
+// let x = 5;
+// const y = x++;
+// console.log(x); // 6
+// console.log(y); // 5
+
+// -----Декремент ----
+//  --value
+
+// for (let i = 0; i <= 5; i++) {
+//   console.log(i);
+// }
+
+// Функція calculateEvenTotal(number) приймає ціле число (параметр number). Доповни код функції так, щоб вона повертала суму всіх парних цілих чисел від одиниці до цього числа включно. Парні числа — це ті, що можна поділити на 2 без остачі (як це зробити розглядалося у темі Арифметичні операції у модулі 1). Наприклад, якщо number дорівнює 6, то сума - це 2 + 4 + 6, тобто 12.
+
+// function calculateTotal(number) {
+//   let sum = 2;
+//   for (let i = 1; i <= number; i++) {
+//     if (i % 2 === 0) {
+//       sum += i;
+//     }
+//   }
+//   return sum;
+// }
+
+// function calculateEvenTotal(number) {
+//   for (let i = 0; i == 1; i++) {}
+//   const count = Math.floor(number / 2);
+//   const sum = count * (count + 1);
+
+//   return sum;
+// }
+
+// function calculateEvenTotal(number) {
+//   let sum = 0;
+//   for (let i = 0; i <= number; i++) {
+//     if (i % 2 === 0) {
+//       sum += i;
+//     }
+//   }
+//   return sum;
+// }
+// console.log(calculateEvenTotal(6));
