@@ -657,3 +657,97 @@
 //   return sum;
 // }
 // console.log(calculateEvenTotal(6));
+
+// --------Оператор break
+// Оператор break використовується в циклі для переривання його виконання. Коли оператор break зустрічається всередині циклу, виконання циклу негайно припиняється, і керування передається до наступної інструкції після циклу.
+
+// Оператор break зазвичай використовується разом з умовними операторами або операторами порівняння всередині циклу, щоб перевіряти певну умову і, якщо вона виконується, переривати виконання циклу.
+
+// for (let i = 0; i < 10; i += 1) {
+//   console.log(i);
+
+//   if (i === 5) {
+//     console.log("Met the number 5, interrupt the execution of the cycle");
+//     break;
+//   }
+// }
+
+// console.log("Log after cycle");
+
+// Доповни код таким чином, щоб у змінну number записувалося перше число у проміжку від start до end, яке ділиться на 5 без остачі.
+
+// const start = 6;
+// const end = 17;
+// let number;
+
+// for (let i = start; i < end; i++) {
+//   if (i % 5 === 0) {
+//     number = i;
+//     break;
+//   }
+// }
+// console.log(number);
+
+// ---------Оператор break і функції
+
+// Коли оператор break зустрічається всередині циклу, виконання циклу негайно припиняється, і керування передається на наступну інструкцію за циклом, навіть якщо цикл знаходиться всередині функції. Тобто оператор break не припиняє виконання функції, а тільки перериває цикл.
+
+// function findNumberFromFive(max, target) {
+//   console.log("Log in the body of the function before the cycle");
+
+//   for (let i = 5; i <= max; i += 1) {
+//     console.log("Current counter value i:", i);
+
+//     if (i === target) {
+//       console.log(`Found the number $ {target}, interrupt the cycle`);
+//       break;
+//     }
+//   }
+
+//   console.log("Log in body function after cycle");
+// }
+
+// findNumberFromFive(10, 6);
+// console.log("Log after exiting function");
+
+// Для того щоб переривати виконання одразу циклу і функції і повернути результат у зовнішній код, є оператор return.
+
+// У прикладі шукаємо число 6. Щойно виконається умова if, робимо повернення, яке перерве виконання циклу і функції.
+
+// function findNumberFromFive(max, target) {
+//   console.log("Log in the body of the function before the cycle");
+
+//   for (let i = 5; i <= max; i += 1) {
+//     console.log("Current counter value i:", i);
+
+//     if (i === target) {
+//       console.log(
+//         `Found the number $ {target}, we make a return, interrupting the loop and function`
+//       );
+//       return i;
+//     }
+//   }
+
+//   // Цей console.log не виконується
+//   console.log("Log in body function after cycle");
+// }
+
+// const result = findNumberFromFive(10, 6);
+// console.log("Log after exiting function");
+// console.log(`Result of function execution ${result}`);
+
+// Функція findNumber(start, end, divisor) приймає три параметра, які є цілими числами.
+
+// Доповни код функції таким чином, щоб вона:
+
+// повертала перше число у діапазоні від start до end включно, яке ділиться на divisor без остачі
+// не використовуй оператор break
+
+function findNumber(start, end, divisor) {
+  for (let i = start; i <= end; i++) {
+    if (i % divisor === 0) {
+      return i;
+    }
+  }
+}
+console.log(findNumber(2, 50, 3));
