@@ -743,11 +743,65 @@
 // повертала перше число у діапазоні від start до end включно, яке ділиться на divisor без остачі
 // не використовуй оператор break
 
-function findNumber(start, end, divisor) {
-  for (let i = start; i <= end; i++) {
-    if (i % divisor === 0) {
-      return i;
-    }
-  }
-}
-console.log(findNumber(2, 50, 3));
+// function findNumber(start, end, divisor) {
+//   for (let i = start; i <= end; i++) {
+//     if (i % divisor === 0) {
+//       return i;
+//     }
+//   }
+// }
+// console.log(findNumber(2, 50, 3));
+
+// for (let i = 0; i <= 5; i++) {
+//   console.log(i);
+// }
+
+// const hours = 43;
+// if (hours < 17) {
+//   console.log("Pending");
+// } else if (hours >= 17 && hours <= 24) {
+//   console.log("Expires");
+// } else {
+//   console.log("Overdue");
+// }
+// const daysUntilDeadline = 0;
+// if (!daysUntilDeadline) {
+//   console.log("today");
+// } else if (daysUntilDeadline == 1) {
+//   console.log("завтра");
+// } else if (daysUntilDeadline == 2) {
+//   console.log("післязавтра");
+// } else {
+//   console.log("у майбетньому");
+// }
+
+// const daysUntilDeadline = -1;
+
+// if (daysUntilDeadline >= 0) {
+//   switch (daysUntilDeadline) {
+//     case 0:
+//       console.log("today");
+//       break;
+//     case 1:
+//       console.log("завтра");
+//       break;
+//     case 3:
+//       console.log("післязавтра");
+//       break;
+//     default:
+//       console.log("у майбетньому");
+//   }
+// } else {
+//   console.log("ти проспав");
+// }
+
+// const min = 20;
+// const max = 100;
+
+// for (let i = min; i >= min && i <= max; i++) {
+//   if (i % 5 === 0) {
+//     console.log(i);
+//   }
+// }
+
+// =========home work====
