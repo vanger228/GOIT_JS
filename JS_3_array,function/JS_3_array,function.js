@@ -6,7 +6,7 @@
 // const numbers = [1, 2, 3, 4, 5]; // масив чисел
 // const mixed = ['apple', 10, true]; // масив з елементами різних типів
 
-// ---------index
+// -----index
 // індексація починається з 0
 // array lenght з 1
 
@@ -93,11 +93,11 @@
 // console.log(arr1 === arr2); // false
 // console.log([] === []); // false
 
-// ---------Приведення типів: масиви
+// -------Приведення типів: масиви
 
 // Явне і не явне приведення типів масивів здійснюється за необхідності виконати операції або порівняння, які вимагають сумісності типів даних.
 
-// Масив → Рядок
+// -----Масив → Рядок
 
 // При перетворенні масиву в рядок усі елементи масиву об'єднуються в один рядок, розділений комами.
 
@@ -118,7 +118,7 @@
 // console.log(Number([1])); // 1
 // console.log(Number([1, 2, 3])); // NaN
 
-// -------boolean
+// -------boolean-------
 
 // При перетворенні масиву в логічне значення будь-який масив, навіть порожній, перетворюється на true.
 
@@ -144,7 +144,7 @@
 
 // console.log(getLength(["Mango", "hurries", "to", "the", "train"]));
 
-// -----Метод split()  str => array
+// --------Метод split()  str => array
 
 // Метод рядків split(delimiter) виконує зворотну операцію порівняно з методом масивів join(delimiter). Він дозволяє перетворити рядок на масив, розбивши його за вказаним роздільником delimiter.
 
@@ -173,7 +173,7 @@
 // }
 // console.log(calculateEngravingPrice("JavaScript is in my blood", 10));
 
-// ----Метод slice()
+// ------Метод slice()------
 
 // Метод масиву slice(begin, end) повертає новий масив, що містить копію частини вихідного масиву, не змінюючи його. Копія створюється від індексу begin до, але не включаючи індекс end.
 // const planets = ["Earth", "Mars", "Venus", "Jupiter", "Saturn"];
@@ -211,7 +211,7 @@
 //   console.log("else");
 // }
 
-// Метод concat()
+// --------Метод concat()--
 
 // Метод concat(arr1, arr2, ..., arrN) використовується для об'єднання двох або більше масивів.
 // const firstArray = ["Mercury", "Venus"];
@@ -239,9 +239,9 @@
 // const allClients = oldClients.concat(newClients);
 // console.log(allClients);
 
-// Метод indexOf()
+// -----Метод indexOf()---
 
-// Метод масиву indexOf(elem) використовується для визначення індексу першого входження елемента elem у масиві. Він повертає індекс елемента, якщо він знайдений, або -1, якщо елемент не знайдений. Метод indexOf() виконує сувору рівність (===) при порівнянні елементів.
+// Метод масиву indexOf(elem) використовується для визначення індексу першого входження елемента у масиві. Він повертає індекс елемента, якщо він знайдений, або -1, якщо елемент не знайдений. Метод indexOf() виконує сувору рівність (===) при порівнянні елементів.
 
 // const oldClients = ["Mango", "Ajax", "Poly", "Kiwi"];
 // const a = oldClients.indexOf("Poly");
@@ -263,7 +263,7 @@
 // }
 // console.log(getSlice(["Mango", "Poly", "Ajax"], "Ajax"));
 
-// ------------Метод push()
+// ------Метод push()
 
 // Метод масиву push() використовується для додавання одного або більше елементів у кінець масиву.
 // array.push(element1, element2, ..., elementN);
@@ -295,7 +295,7 @@
 // }
 // console.log(createArrayOfNumbers(10, 21));
 
-// =============Ітерація по масиву======
+// -------Ітерація по масиву------
 
 // const planets = ["Earth", "Mars", "Venus"];
 
@@ -310,11 +310,104 @@
 
 // Функція calculateTotalPrice(order) приймає один параметр order - масив чисел. Доповни функцію так, щоб вона повертала загальну суму елементів з масиву order.
 
-function calculateTotalPrice(order) {
-  const total = 0;
-  for (i = 0; i < order.length; i++) {
-    totalSum = total + order[i];
-  }
-  console.log(totalSum);
-}
-console.log(calculateTotalPrice([12, 85, 37, 4]));
+// function calculateTotalPrice(order) {
+//   let totalSum = 0;
+//   for (i = 0; i < order.length; i++) {
+//     totalSum = totalSum + order[i];
+//   }
+//   return totalSum;
+// }
+// console.log(calculateTotalPrice([12, 85, 37, 4]));
+
+// Функція getEvenNumbers(start, end) має два параметри start та end, які є цілими числами. Доповни код функції так, щоб вона повертала масив усіх парних чисел від start до end. Якщо жодного парного числа немає, то масив має бути пустим. Парним вважається число, яке ділиться на 2 без остачі (10 % 2 === 0). Використовуй цикл for.
+
+// function getEvenNumbers(start, end) {
+//   let sumNumbers = [];
+//   for (let i = start; i <= end; i++) {
+//     if (i % 2 === 0) {
+//       sumNumbers.push(i);
+//     }
+//   }
+//   return sumNumbers;
+// }
+// console.log(getEvenNumbers(6, 12));
+
+// Метод includes()
+
+// Метод масиву includes() використовується для перевірки наявності певного елемента в масиві. Він повертає логічне значення true, якщо елемент знайдено в масиві, і false, якщо елемент відсутній.
+
+// array.includes(element)
+
+// const fruits = ["apple", "banana", "orange"];
+
+// if (fruits.includes("banana")) {
+//   console.log("The array has an element banana");
+// } else {
+//   console.log("Array does not contain banana element");
+// }
+
+// Функція checkStorage(storage, item) приймає два параметри:
+
+// storage - масив рядків, що описує доступні товари на складі
+// item - рядок з назвою товара, наявність якого потрібно перевірити
+// Доповни код функції таким чином, щоб вона перевіряла, чи присутній такий товар в масиві storage і повертала:
+
+// рядок "<item> is available to order!", де item - це назва товара, якщо товар було знайдено
+// рядок "Sorry! We are out of stock!", якщо такого товара немає в масиві
+// Зроби так, щоб пошук за ім'ям товару був незалежний від регістру, тобто наприклад "plum" і "pLuM" мають бути знайдені у масиві ["apple", "plum", "pear"].
+
+// function checkStorage(storage, item) {
+//   if (storage.includes(item.toLowerCase())) {
+//     return `${item.toLowerCase()} is available to order!`;
+//   } else {
+//     return `Sorry! We are out of stock!`;
+//   }
+// }
+// console.log(checkStorage(["apple", "plum", "pear"], "plum"));
+
+// Створи порожній масив для зберігання нового масиву.
+// Використай цикл for для ітерації кожного елемента у array1.
+// У тілі циклу перевір, чи поточний елемент існує у array2 за допомогою методу includes.
+// Якщо він існує, то додай елемент до нового масиву.
+// Поверни наповнений масив спільних елементів як результат роботи функції.
+
+// function getCommonElements(array1, array2) {
+//   let array3 = [];
+//   for (i = 0; i < array1.length; i++) {
+//     if (array2.includes(array1[i])) {
+//       array3.push(array1[i]);
+//     }
+//   }
+//   return array3;
+// }
+// console.log(getCommonElements([1, 2, 6, 7, 8, 3], [2, 4, 7]));
+
+// -----Цикл for...of----
+// Цикл for...of — це зручний спосіб перебору масиву. Тіло циклу буде виконуватися на кожній ітерації. Це гарна заміна циклу for, якщо не потрібен доступ до лічильника.
+
+// Синтаксис циклу for...of виглядає так:
+
+// for (const element of array) {
+//   // тіло циклу
+// }
+
+// element — це змінна, в яку на кожній ітерації буде записуватися поточний елемент масиву.
+// array — це вихідний масив, який ми хочемо перебрати.
+
+// const planets = ["Earth", "Mars", "Venus"];
+// for (const planet of planets) {
+//   console.log(`1.${planet}`);
+// }
+
+// Доповни код функції calculateTotalPrice(order) так, щоб вона повертала загальну суму чисел в масиві order.Використай цикл for...of для перебору масиву.
+
+// function calculateTotalPrice(order) {
+//   let totalPrice = 0;
+//   for (const elem of order) {
+//     totalPrice += elem;
+//   }
+//   return totalPrice;
+// }
+// console.log(calculateTotalPrice([12, 85, 37, 4]));
+
+// ------Функції (частина 2)

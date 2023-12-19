@@ -46,7 +46,7 @@
 //   console.log("Unsatisfactorily");
 // }
 
-// exersise----------------------------------------
+// exersise--------
 // Функція checkStorage(available, ordered) перевіряє можливість оформлення замовлення і повертає повідомлення про результат.
 // available - доступна кількість товарів на складі
 // ordered - кількість одиниць товару в замовленні
@@ -62,7 +62,7 @@
 // const ordered = 30;
 // const result = checkStorage(available, ordered);
 // console.log(result);
-// ---------------------------------------------
+// ------
 
 // Блок else...if
 // умови перевіряються почерзі, Перевірка зупиняється, щойно програма знаходить першу умову, яка задовільняється.
@@ -110,7 +110,7 @@
 // const result = checkStorage(available, ordered);
 // console.log(result);
 
-// Тернарний оператор---------------
+// Тернарний оператор-----------
 // <condition> ? <expression if condition is true> : <expression if condition is false>
 // Він працює таким чином:
 
@@ -352,7 +352,7 @@
 //   console.log("Blocked from typing in chat!");
 // }
 
-// ------METHODS-----------------------
+// ------METHODS----
 
 // method length - return length of string
 // const message = "JavaScript is awesome";
