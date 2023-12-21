@@ -549,3 +549,5 @@
 // const fruits = [ 'banana', 'apple', 'orange', 'watermelon', 'apple', 'orange', 'grape', 'apple', ];
 // const randomFruit = fruits[Math.floor(Math.random() * fruits.length)];
 // console.log(randomFruit); // поверне рандомний фрукт із масиву
+//-----перетворення псевдомасиву в масив
+//Array.from(arguments)
