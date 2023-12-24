@@ -293,3 +293,84 @@
 //   [emailInputName]: 'henry.carter@aptmail.com',
 //   [passwordInputName]: 'jqueryismyjam',
 // };
+
+// function calculateTotalPrice(order) {
+//   let totalPrice = 0;
+//   for (i = 0; i < order.length; i++) {
+//     totalPrice += order[i];
+//   }
+//   return totalPrice;
+// }
+// console.log(calculateTotalPrice([1, 2, 5]));
+
+// ------Перебір обєкту
+// цикл for...in
+
+// for (key in object) {
+//   // інструкції
+// }
+
+// Перебери об'єкт apartment, використовуючи цикл for...in, і запиши в масив keys всі його ключі, а в масив values всі значення його властивостей.
+// const apartment = {
+//   descr: 'Spacious apartment in the city center',
+//   rating: 4,
+//   price: 2153,
+// };
+// const keys = [];
+// const values = [];
+
+// for (let key in apartment) {
+//   if (apartment.hasOwnProperty(key)) {
+//     keys.push(key);
+//     values.push(apartment[key]);
+//   }
+// }
+
+// console.log(keys);
+// console.log(values);
+
+// ----Метод Object.keys()
+// Вбудований клас Object має кілька корисних методів для роботи з об'єктами.
+
+// Перший з них — це Object.keys(object), який приймає об'єкт і повертає масив ключів його властивостей. Якщо в об'єкті немає властивостей, метод поверне порожній масив.
+
+// const book = {
+//   title: "The Last Kingdom",
+//   author: "Bernard Cornwell",
+//   genres: ["historical prose", "adventure"],
+//   rating: 8.38,
+// };
+// const keys = Object.keys(book);
+// console.log(keys); // ['title', 'author', 'genres', 'rating']
+
+// Скомбінувавши результат Object.keys() і цикл for...of, можна зручно перебрати властивості об'єкта, не вдаючись до використання циклу for...in.
+
+// const book = {
+//   author: "Bernard Cornwell",
+//   genres: ["historical prose", "adventure"],
+//   rating: 8.38,
+// };
+// const keys = Object.keys(book);
+
+// for (const key of keys){
+//   console.log(key); // Ключ
+//   console.log(book[key]); // Значення властивості
+// }
+
+// Ми перебираємо масив ключів об'єкта і на кожній ітерації отримуємо ключ і значення властивості.
+
+// Перебери об'єкт apartment, використовуючи метод Object.keys() і цикл for...of. Запиши у змінну keys масив ключів властивостей об'єкта apartment, і додай в масив values всі значення його властивостей.
+
+// const apartment = {
+//   descr: 'Spacious apartment in the city center',
+//   rating: 4,
+//   price: 2153,
+// };
+// const values = [];
+// const keys = Object.keys(apartment);
+// // [ 'descr', 'rating', 'price' ]
+// // console.log(keys);
+// for (let key of keys) {
+//   values.push(apartment[key]);
+// }
+// console.log(values);
