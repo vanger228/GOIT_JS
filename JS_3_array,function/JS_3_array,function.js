@@ -118,7 +118,7 @@
 // console.log(Number([1])); // 1
 // console.log(Number([1, 2, 3])); // NaN
 
-// -------boolean-------
+// ----boolean
 
 // При перетворенні масиву в логічне значення будь-який масив, навіть порожній, перетворюється на true.
 
@@ -173,7 +173,7 @@
 // }
 // console.log(calculateEngravingPrice("JavaScript is in my blood", 10));
 
-// ------Метод slice()------
+// ----Метод slice()
 
 // Метод масиву slice(begin, end) повертає новий масив, що містить копію частини вихідного масиву, не змінюючи його. Копія створюється від індексу begin до, але не включаючи індекс end.
 // const planets = ["Earth", "Mars", "Venus", "Jupiter", "Saturn"];
@@ -211,7 +211,7 @@
 //   console.log("else");
 // }
 
-// --------Метод concat()--
+// --------Метод concat()
 
 // Метод concat(arr1, arr2, ..., arrN) використовується для об'єднання двох або більше масивів.
 // const firstArray = ["Mercury", "Venus"];
@@ -239,7 +239,7 @@
 // const allClients = oldClients.concat(newClients);
 // console.log(allClients);
 
-// -----Метод indexOf()---
+// -----Метод indexOf()
 
 // Метод масиву indexOf(elem) використовується для визначення індексу першого входження елемента у масиві. Він повертає індекс елемента, якщо він знайдений, або -1, якщо елемент не знайдений. Метод indexOf() виконує сувору рівність (===) при порівнянні елементів.
 
@@ -295,7 +295,7 @@
 // }
 // console.log(createArrayOfNumbers(10, 21));
 
-// -------Ітерація по масиву------
+// -------Ітерація по масиву
 
 // const planets = ["Earth", "Mars", "Venus"];
 
@@ -382,7 +382,7 @@
 // }
 // console.log(getCommonElements([1, 2, 6, 7, 8, 3], [2, 4, 7]));
 
-// -----Цикл for...of----
+// -----Цикл for of
 // Цикл for...of — це зручний спосіб перебору масиву. Тіло циклу буде виконуватися на кожній ітерації. Це гарна заміна циклу for, якщо не потрібен доступ до лічильника.
 
 // Синтаксис циклу for...of виглядає так:
@@ -550,3 +550,33 @@
 // console.log(randomFruit); // поверне рандомний фрукт із масиву
 //-----перетворення псевдомасиву в масив
 //Array.from(arguments)
+
+// -----codewars
+// Our football team has finished the championship.
+
+// Our team's match results are recorded in a collection of strings. Each match is represented by a string in the format "x:y", where x is our team's score and y is our opponents score.
+
+// For example: ["3:1", "2:2", "0:1", ...]
+
+// Points are awarded for each match as follows:
+
+// if x > y: 3 points (win)
+// if x < y: 0 points (loss)
+// if x = y: 1 point (tie)
+// We need to write a function that takes this collection and returns the number of points our team (x) got in the championship by the rules given above.
+
+// function getresultfromScore(score) {
+//   let totalPoints = 0;
+//   for (let strScore of score) {
+//     let [x, y] = strScore.split(':');
+//     if (x > y) {
+//       totalPoints += 3;
+//     } else if (x < y) {
+//     } else {
+//       totalPoints += 1;
+//     }
+//   }
+//   return totalPoints;
+// }
+// const a = getresultfromScore(['3:1', '2:2', '0:1']);
+// console.log(a);
