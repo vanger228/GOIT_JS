@@ -404,3 +404,794 @@
 
 // const genres = books.flatMap(book => book.genres);
 // console.log(genres);
+
+// const getUserEmails = users => {
+//   return users.map(user => user.email);
+// };
+
+// console.log(
+//   getUserEmails([
+//     {
+//       name: 'Moore Hensley',
+//       email: 'moorehensley@indexia.com',
+//       eyeColor: 'blue',
+//       friends: ['Sharron Pace'],
+//       isActive: false,
+//       balance: 2811,
+//       skills: ['ipsum', 'lorem'],
+//       gender: 'male',
+//       age: 37,
+//     },
+//     {
+//       name: 'Sharlene Bush',
+//       email: 'sharlenebush@tubesys.com',
+//       eyeColor: 'blue',
+//       friends: ['Briana Decker', 'Sharron Pace'],
+//       isActive: true,
+//       balance: 3821,
+//       skills: ['tempor', 'mollit', 'commodo', 'veniam', 'laborum'],
+//       gender: 'female',
+//       age: 34,
+//     },
+//     {
+//       name: 'Ross Vazquez',
+//       email: 'rossvazquez@xinware.com',
+//       eyeColor: 'green',
+//       friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+//       isActive: false,
+//       balance: 3793,
+//       skills: ['nulla', 'anim', 'proident', 'ipsum', 'elit'],
+//       gender: 'male',
+//       age: 24,
+//     },
+//     {
+//       name: 'Elma Head',
+//       email: 'elmahead@omatom.com',
+//       eyeColor: 'green',
+//       friends: ['Goldie Gentry', 'Aisha Tran'],
+//       isActive: true,
+//       balance: 2278,
+//       skills: ['adipisicing', 'irure', 'velit'],
+//       gender: 'female',
+//       age: 21,
+//     },
+//     {
+//       name: 'Carey Barr',
+//       email: 'careybarr@nurali.com',
+//       eyeColor: 'blue',
+//       friends: ['Jordan Sampson', 'Eddie Strong'],
+//       isActive: true,
+//       balance: 3951,
+//       skills: ['ex', 'culpa', 'nostrud'],
+//       gender: 'male',
+//       age: 27,
+//     },
+//     {
+//       name: 'Blackburn Dotson',
+//       email: 'blackburndotson@furnigeer.com',
+//       eyeColor: 'brown',
+//       friends: ['Jacklyn Lucas', 'Linda Chapman'],
+//       isActive: false,
+//       balance: 1498,
+//       skills: ['non', 'amet', 'ipsum'],
+//       gender: 'male',
+//       age: 38,
+//     },
+//     {
+//       name: 'Sheree Anthony',
+//       email: 'shereeanthony@kog.com',
+//       eyeColor: 'brown',
+//       friends: ['Goldie Gentry', 'Briana Decker'],
+//       isActive: true,
+//       balance: 2764,
+//       skills: ['lorem', 'veniam', 'culpa'],
+//       gender: 'female',
+//       age: 39,
+//     },
+//   ])
+// );
+
+// ----Метод filter()
+
+// array.filter((element, index, array) => {
+//   // Тіло колбек-функції
+// });
+
+// Не змінює оригінальний масив.
+// Поелементно перебирає оригінальний масив.
+// Повертає новий масив.
+// Додає в масив, що повертається, елементи, які задовольняють умову колбек-функції.
+// Якщо колбек повернув true, елемент додається в масив, що повертається.
+// Якщо колбек повернув false, елемент не додається в масив, що повертається.
+// Якщо жоден елемент не задовольнив умову, повертає порожній масив.
+
+// const values = [51, -3, 27, 21, -68, 42, -37];
+// const filteredNumbers = values.filter(value => value >= 6);
+// console.log(filteredNumbers);
+
+// Доповни код так, щоб у змінній evenNumbers був масив парних чисел із масиву numbers, а у змінній oddNumbers — масив непарних.Обов'язково використовуй метод filter().
+
+// const numbers = [17, 24, 82, 61, 36, 18, 47, 52, 73];
+
+// const evenNumbers = numbers.filter(number => number % 2 === 0);
+// const oddNumbers = numbers.filter(number => number % 2 != 0);
+// console.log(evenNumbers);
+
+// const LOW_SCORE = 50;
+// const HIGH_SCORE = 80;
+// const students = [
+//   { name: 'Mango', score: 83 },
+//   { name: 'Poly', score: 59 },
+//   { name: 'Ajax', score: 37 },
+//   { name: 'Kiwi', score: 94 },
+//   { name: 'Houston', score: 64 },
+// ];
+// const topStudents = students
+//   .filter(student => student.score >= LOW_SCORE && student.score <= 80)
+//   .map(student => student.name);
+// console.log(topStudents);
+
+// console.log(
+//   students
+//     .filter(student => student.score >= LOW_SCORE && student.score < HIGH_SCORE)
+//     .map(student => student.score)
+// );
+
+// коротка версія
+// У колбек-функції зручно деструктуризувати властивості об'єкта
+// const average = students.filter(
+//   ({ score }) => score >= LOW_SCORE && score < HIGH_SCORE
+// );
+// console.log(average); // Масив об'єктів з іменами Poly і Houston
+
+// Масив books містить колекцію об'єктів книг, кожен з яких містить властивості title, author, rating. Використовуючи метод filter(), доповни код таким чином, щоб:
+
+// У змінній topRatedBooks утворився масив книг, рейтинг яких (властивість rating) більший за або дорівнює значенню змінної MIN_RATING.
+// У змінній booksByAuthor утворився масив книг, написаних автором з ім'ям (властивість author), яке збігається зі значенням у змінній AUTHOR.
+
+// const books = [
+//   {
+//     title: 'The Last Kingdom',
+//     author: 'Bernard Cornwell',
+//     rating: 8.38,
+//   },
+//   {
+//     title: 'Beside Still Waters',
+//     author: 'Robert Sheckley',
+//     rating: 8.51,
+//   },
+//   {
+//     title: 'The Dream of a Ridiculous Man',
+//     author: 'Fyodor Dostoevsky',
+//     rating: 7.75,
+//   },
+//   { title: 'Redder Than Blood', author: 'Tanith Lee', rating: 7.94 },
+//   { title: 'Enemy of God', author: 'Bernard Cornwell', rating: 8.67 },
+// ];
+
+// const MIN_RATING = 8;
+// const AUTHOR = 'Bernard Cornwell';
+
+// const topRatedBooks = books.filter(book => book.rating >= MIN_RATING);
+// const booksByAuthor = books.filter(book => book.author === AUTHOR);
+
+// Доповни функцію getUsersWithEyeColor(users, color) таким чином, щоб вона повертала масив користувачів, у яких колір очей (властивість eyeColor) збігається зі значенням другого параметра color.
+
+// const getUsersWithEyeColor = (users, color) => {
+//   return users.filter(user => user.eyeColor === color);
+// };
+
+// console.log(
+//   getUsersWithEyeColor(
+//     [
+//       {
+//         name: 'Moore Hensley',
+//         email: 'moorehensley@indexia.com',
+//         eyeColor: 'blue',
+//         friends: ['Sharron Pace'],
+//         isActive: false,
+//         balance: 2811,
+//         gender: 'male',
+//       },
+//       {
+//         name: 'Sharlene Bush',
+//         email: 'sharlenebush@tubesys.com',
+//         eyeColor: 'blue',
+//         friends: ['Briana Decker', 'Sharron Pace'],
+//         isActive: true,
+//         balance: 3821,
+//         gender: 'female',
+//       },
+//       {
+//         name: 'Ross Vazquez',
+//         email: 'rossvazquez@xinware.com',
+//         eyeColor: 'green',
+//         friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+//         isActive: false,
+//         balance: 3793,
+//         gender: 'male',
+//       },
+//       {
+//         name: 'Elma Head',
+//         email: 'elmahead@omatom.com',
+//         eyeColor: 'green',
+//         friends: ['Goldie Gentry', 'Aisha Tran'],
+//         isActive: true,
+//         balance: 2278,
+//         gender: 'female',
+//       },
+//       {
+//         name: 'Carey Barr',
+//         email: 'careybarr@nurali.com',
+//         eyeColor: 'blue',
+//         friends: ['Jordan Sampson', 'Eddie Strong'],
+//         isActive: true,
+//         balance: 3951,
+//         gender: 'male',
+//       },
+//       {
+//         name: 'Blackburn Dotson',
+//         email: 'blackburndotson@furnigeer.com',
+//         eyeColor: 'brown',
+//         friends: ['Jacklyn Lucas', 'Linda Chapman'],
+//         isActive: false,
+//         balance: 1498,
+//         gender: 'male',
+//       },
+//       {
+//         name: 'Sheree Anthony',
+//         email: 'shereeanthony@kog.com',
+//         eyeColor: 'brown',
+//         friends: ['Goldie Gentry', 'Briana Decker'],
+//         isActive: true,
+//         balance: 2764,
+//         gender: 'female',
+//       },
+//     ],
+//     'brown'
+//   )
+// );
+
+// Доповни код функції getUsersWithAge(users, minAge, maxAge), щоб повернути масив користувачів, вік (збережений у властивості age) яких потрапляє у заданий діапазон від minAge до maxAge.
+
+// Поради:
+
+// Використай метод filter() для створення нового масиву, в якому зберігаються тільки елементи, які задовольняють певну умову.
+// Використай оператори >= (більше або дорівнює) та <= (менше або дорівнює), щоб відфільтрувати користувачів, вік яких точно потрапляє у діапазон між мінімальним minAge та максимальним maxAge значеннями.
+
+// const getUsersWithAge = (users, minAge, maxAge) => {
+//   return users
+//     .filter(user => user.age >= minAge && user.age <= maxAge)
+//     .map(user => user.name);
+// };
+
+// console.log(
+//   getUsersWithAge(
+//     [
+//       {
+//         name: 'Moore Hensley',
+//         email: 'moorehensley@indexia.com',
+//         eyeColor: 'blue',
+//         friends: ['Sharron Pace'],
+//         isActive: false,
+//         balance: 2811,
+//         gender: 'male',
+//         age: 37,
+//       },
+//       {
+//         name: 'Sharlene Bush',
+//         email: 'sharlenebush@tubesys.com',
+//         eyeColor: 'blue',
+//         friends: ['Briana Decker', 'Sharron Pace'],
+//         isActive: true,
+//         balance: 3821,
+//         gender: 'female',
+//         age: 34,
+//       },
+//       {
+//         name: 'Ross Vazquez',
+//         email: 'rossvazquez@xinware.com',
+//         eyeColor: 'green',
+//         friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+//         isActive: false,
+//         balance: 3793,
+//         gender: 'male',
+//         age: 24,
+//       },
+//       {
+//         name: 'Elma Head',
+//         email: 'elmahead@omatom.com',
+//         eyeColor: 'green',
+//         friends: ['Goldie Gentry', 'Aisha Tran'],
+//         isActive: true,
+//         balance: 2278,
+//         gender: 'female',
+//         age: 21,
+//       },
+//       {
+//         name: 'Carey Barr',
+//         email: 'careybarr@nurali.com',
+//         eyeColor: 'blue',
+//         friends: ['Jordan Sampson', 'Eddie Strong'],
+//         isActive: true,
+//         balance: 3951,
+//         gender: 'male',
+//         age: 27,
+//       },
+//       {
+//         name: 'Blackburn Dotson',
+//         email: 'blackburndotson@furnigeer.com',
+//         eyeColor: 'brown',
+//         friends: ['Jacklyn Lucas', 'Linda Chapman'],
+//         isActive: false,
+//         balance: 1498,
+//         gender: 'male',
+//         age: 38,
+//       },
+//       {
+//         name: 'Sheree Anthony',
+//         email: 'shereeanthony@kog.com',
+//         eyeColor: 'brown',
+//         friends: ['Goldie Gentry', 'Briana Decker'],
+//         isActive: true,
+//         balance: 2764,
+//         gender: 'female',
+//         age: 39,
+//       },
+//     ],
+//     30,
+//     40
+//   )
+// );
+
+// ----Метод find()
+// шукає і повертає перший елемент що задовільняє перевірку перебору
+// Не змінює оригінальний масив
+// Поелементно перебирає оригінальний масив
+// Повертає перший елемент, що задовольняє умову, тобто коли колбек повертає true
+// Якщо жоден елемент не задовольнив умову, тобто для всіх елементів колбек повернув false, метод повертає undefined
+
+// const colorPickerOptions = [
+//   { label: 'red', color: '#F44336' },
+//   { label: 'green', color: '#4CAF50' },
+//   { label: 'blue', color: '#2196F3' },
+//   { label: 'pink', color: '#E91E63' },
+//   { label: 'indigo', color: '#3F51B5' },
+// ];
+
+// console.log(colorPickerOptions.find(option => option.label === 'blue')); // { label: "blue", color: "#2196F3" }
+// console.log(colorPickerOptions.find(option => option.label === 'pink')); // { label: "pink", color: "#E91E63" }
+// console.log(colorPickerOptions.find(option => option.label === 'white')); // undefined
+
+// Масив books містить колекцію об'єктів книг, кожен з яких містить властивості title, author, rating.
+
+// Використовуючи метод find(), доповни код таким чином, щоб:
+
+// У змінній bookWithTitle утворився об'єкт книги, назва якої (властивість title) збігається зі значенням змінної BOOK_TITLE.
+// У змінній bookByAuthor утворився об'єкт книги, автор якої (властивість author) збігається зі значенням змінної AUTHOR.
+
+// const books = [
+//   {
+//     title: 'The Last Kingdom',
+//     author: 'Bernard Cornwell',
+//     rating: 8.38,
+//   },
+//   {
+//     title: 'Beside Still Waters',
+//     author: 'Robert Sheckley',
+//     rating: 8.51,
+//   },
+//   {
+//     title: 'The Dream of a Ridiculous Man',
+//     author: 'Fyodor Dostoevsky',
+//     rating: 7.75,
+//   },
+//   { title: 'Redder Than Blood', author: 'Tanith Lee', rating: 7.94 },
+// ];
+// const BOOK_TITLE = 'The Dream of a Ridiculous Man';
+// const AUTHOR = 'Robert Sheckley';
+
+// const bookWithTitle = books.find(book => book.title === BOOK_TITLE);
+// const bookByAuthor = books.find(book => book.author === AUTHOR);
+// console.log(bookWithTitle);
+// console.log(bookByAuthor);
+
+// Доповни функцію getUserWithEmail(users, email) таким чином, щоб вона повертала об'єкт користувача, пошта якого (властивість email) збігається зі значенням другого параметра email.
+// const getUserWithEmail = (users, email) => {
+//   return users.find(user => user.email === email);
+// };
+// console.log(
+//   getUserWithEmail(
+//     [
+//       {
+//         name: 'Moore Hensley',
+//         email: 'moorehensley@indexia.com',
+//         eyeColor: 'blue',
+//         friends: ['Sharron Pace'],
+//         isActive: false,
+//         balance: 2811,
+//         gender: 'male',
+//       },
+//       {
+//         name: 'Sharlene Bush',
+//         email: 'sharlenebush@tubesys.com',
+//         eyeColor: 'blue',
+//         friends: ['Briana Decker', 'Sharron Pace'],
+//         isActive: true,
+//         balance: 3821,
+//         gender: 'female',
+//       },
+//       {
+//         name: 'Ross Vazquez',
+//         email: 'rossvazquez@xinware.com',
+//         eyeColor: 'green',
+//         friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+//         isActive: false,
+//         balance: 3793,
+//         gender: 'male',
+//       },
+//       {
+//         name: 'Elma Head',
+//         email: 'elmahead@omatom.com',
+//         eyeColor: 'green',
+//         friends: ['Goldie Gentry', 'Aisha Tran'],
+//         isActive: true,
+//         balance: 2278,
+//         gender: 'female',
+//       },
+//       {
+//         name: 'Carey Barr',
+//         email: 'careybarr@nurali.com',
+//         eyeColor: 'blue',
+//         friends: ['Jordan Sampson', 'Eddie Strong'],
+//         isActive: true,
+//         balance: 3951,
+//         gender: 'male',
+//       },
+//       {
+//         name: 'Blackburn Dotson',
+//         email: 'blackburndotson@furnigeer.com',
+//         eyeColor: 'brown',
+//         friends: ['Jacklyn Lucas', 'Linda Chapman'],
+//         isActive: false,
+//         balance: 1498,
+//         gender: 'male',
+//       },
+//       {
+//         name: 'Sheree Anthony',
+//         email: 'shereeanthony@kog.com',
+//         eyeColor: 'brown',
+//         friends: ['Goldie Gentry', 'Briana Decker'],
+//         isActive: true,
+//         balance: 2764,
+//         gender: 'female',
+//       },
+//     ],
+//     'rossvazquez@xinware.com'
+//   )
+// );
+
+// ----Метод every()
+
+// Метод every(callback) перевіряє, чи задовольняють усі елементи умову колбек-функції.
+// Не змінює оригінальний масив
+// Поелементно перебирає оригінальний масив
+// Повертає true, якщо всі елементи масиву задовольняють умову
+// Повертає false, якщо хоча б один елемент масиву не задовольняє умову
+// Перебирання масиву припиняється, якщо колбек повертає false
+
+// const result = [1, 2, 3, 4, 5].every(value => value > 0);
+// console.log(result); //true
+// const result1 = [1, -2, 3, 4, 5].every(value => value > 0);
+// console.log(result1); //false
+
+// const products = [
+//   { name: 'apple', quantity: 2 },
+//   { name: 'orange', quantity: 5 },
+//   { name: 'plum', quantity: 0 },
+// ];
+
+// const hasEveryProduct = products.every(product => product.quantity > 0);
+// console.log(hasEveryProduct); // false
+
+// Доповни функцію isEveryUserActive(users) таким чином, щоб вона перевіряла, чи всі користувачі зараз активні (властивість isActive) і повертала true або false.
+
+// const isEveryUserActive = users => {
+//   return users.every(user => user.isActive === true);
+// };
+
+// console.log(
+//   isEveryUserActive([
+//     {
+//       name: 'Moore Hensley',
+//       email: 'moorehensley@indexia.com',
+//       eyeColor: 'blue',
+//       friends: ['Sharron Pace'],
+//       isActive: false,
+//       balance: 2811,
+//       gender: 'male',
+//     },
+//     {
+//       name: 'Sharlene Bush',
+//       email: 'sharlenebush@tubesys.com',
+//       eyeColor: 'blue',
+//       friends: ['Briana Decker', 'Sharron Pace'],
+//       isActive: true,
+//       balance: 3821,
+//       gender: 'female',
+//     },
+//     {
+//       name: 'Ross Vazquez',
+//       email: 'rossvazquez@xinware.com',
+//       eyeColor: 'green',
+//       friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+//       isActive: false,
+//       balance: 3793,
+//       gender: 'male',
+//     },
+//     {
+//       name: 'Elma Head',
+//       email: 'elmahead@omatom.com',
+//       eyeColor: 'green',
+//       friends: ['Goldie Gentry', 'Aisha Tran'],
+//       isActive: true,
+//       balance: 2278,
+//       gender: 'female',
+//     },
+//     {
+//       name: 'Carey Barr',
+//       email: 'careybarr@nurali.com',
+//       eyeColor: 'blue',
+//       friends: ['Jordan Sampson', 'Eddie Strong'],
+//       isActive: true,
+//       balance: 3951,
+//       gender: 'male',
+//     },
+//     {
+//       name: 'Blackburn Dotson',
+//       email: 'blackburndotson@furnigeer.com',
+//       eyeColor: 'brown',
+//       friends: ['Jacklyn Lucas', 'Linda Chapman'],
+//       isActive: false,
+//       balance: 1498,
+//       gender: 'male',
+//     },
+//     {
+//       name: 'Sheree Anthony',
+//       email: 'shereeanthony@kog.com',
+//       eyeColor: 'brown',
+//       friends: ['Goldie Gentry', 'Briana Decker'],
+//       isActive: true,
+//       balance: 2764,
+//       gender: 'female',
+//     },
+//   ])
+// );
+
+// ----Метод some()
+
+// Метод some(callback) перевіряє, чи задовольняє хоча б один елемент умову колбек-функції.
+
+// Доповни функцію isAnyUserActive(users) таким чином, щоб вона перевіряла наявність хоча б одного активного користувача (властивість isActive) і повертала true або false.
+
+// const isAnyUserActive = users => {
+//   return users.some(user => user.isActive === true);
+// };
+
+// console.log(
+//   isAnyUserActive([
+//     {
+//       name: 'Moore Hensley',
+//       email: 'moorehensley@indexia.com',
+//       eyeColor: 'blue',
+//       friends: ['Sharron Pace'],
+//       isActive: false,
+//       balance: 2811,
+//       gender: 'male',
+//     },
+//     {
+//       name: 'Sharlene Bush',
+//       email: 'sharlenebush@tubesys.com',
+//       eyeColor: 'blue',
+//       friends: ['Briana Decker', 'Sharron Pace'],
+//       isActive: true,
+//       balance: 3821,
+//       gender: 'female',
+//     },
+//     {
+//       name: 'Ross Vazquez',
+//       email: 'rossvazquez@xinware.com',
+//       eyeColor: 'green',
+//       friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+//       isActive: false,
+//       balance: 3793,
+//       gender: 'male',
+//     },
+//     {
+//       name: 'Elma Head',
+//       email: 'elmahead@omatom.com',
+//       eyeColor: 'green',
+//       friends: ['Goldie Gentry', 'Aisha Tran'],
+//       isActive: true,
+//       balance: 2278,
+//       gender: 'female',
+//     },
+//     {
+//       name: 'Carey Barr',
+//       email: 'careybarr@nurali.com',
+//       eyeColor: 'blue',
+//       friends: ['Jordan Sampson', 'Eddie Strong'],
+//       isActive: true,
+//       balance: 3951,
+//       gender: 'male',
+//     },
+//     {
+//       name: 'Blackburn Dotson',
+//       email: 'blackburndotson@furnigeer.com',
+//       eyeColor: 'brown',
+//       friends: ['Jacklyn Lucas', 'Linda Chapman'],
+//       isActive: false,
+//       balance: 1498,
+//       gender: 'male',
+//     },
+//     {
+//       name: 'Sheree Anthony',
+//       email: 'shereeanthony@kog.com',
+//       eyeColor: 'brown',
+//       friends: ['Goldie Gentry', 'Briana Decker'],
+//       isActive: true,
+//       balance: 2764,
+//       gender: 'female',
+//     },
+//   ])
+// );
+
+// ----Метод reduce()
+
+// Метод reduce(callback, initialValue) використовується для послідовної обробки кожного елемента масиву із збереженням проміжного результату. Трохи складніший за інші методи для засвоєння, але результат вартий того.
+
+// array.reduce((acc, element, index, array) => {
+//   // Тіло колбек-функції
+// }, initialValue);
+
+// Не змінює оригінальний масив
+// Поелементно перебирає оригінальний масив
+// Повертає все, що завгодно (об’єкт, масив, рядок, число тощо)
+// Може замінити функціонал будь-якого іншого перебираючого методу масиву та навіть їх комбінацію
+
+// Колбек-функція з параметра редьюса очікує в свою чергу чотири параметри. Ці параметри, так само як і в колбеках інших перебираючих методів масиву, можна не оголошувати, якщо вони вам не потрібні, але не можна порушувати їх послідовність:
+
+// 1-й параметр (acc) — це акумулятор, тобто проміжний результат. Значення, яке поверне колбек-функція на поточній ітерації, буде значенням цього параметра на наступній ітерації;
+
+// !! Обов'язково задаємо початковий аккум після колбека
+
+// 2-й параметр — поточний елемент масиву;
+
+// 3-й параметр — індекс поточної ітерації;
+
+// 4-й параметр — посилання на вихідний масив.
+
+// Найлегше уявити його роботу на прикладі підрахунку суми елементів масиву.
+
+// const total = [2, 7, 3].reduce((acc, number) => {
+//   return acc + number;
+// }, 0);
+
+// console.log(total); // 12
+
+// Розгляньмо детальніше роботу редьюса у прикладі вище:
+
+// Початкове значення акумулятора 0
+// перша ітерація колбек-функції 0 + 2 поверне 2
+// друга ітерація колбек-функції 2 + 7 поверне 9
+// третя ітерація колбек-функції 9 + 3 поверне 12
+
+// Результатом коду вище буде 12.
+
+// Тобто метод reduce() використовується, коли необхідно взяти «багато» і привести до «одного». У повсякденних завданнях його застосування зводиться до роботи з числами.
+
+// Ігровому сервісу необхідний функціонал підрахунку середнього часу, проведеного в іграх, одним гравцем. У змінній players зберігається об'єкт, де ключ це ім'я гравця, а значення - його ігровий час. У змінній playtimes зберігається масив значень об'єкта players, тобто масив ігрового часу усіх гравців. Значенням змінної averagePlayTime буде середній час, проведений одним гравцем в іграх.
+
+// Доповни код таким чином, щоб у змінній totalPlayTime вийшов загальний ігровий час з масиву playtimes. Використовуй метод reduce().
+
+// const players = {
+//   mango: 1270,
+//   poly: 468,
+//   ajax: 710,
+//   kiwi: 244,
+// };
+// const playtimes = Object.values(players); // [1270, 468, 710, 244]
+
+// const totalPlayTime = playtimes.reduce((acc, time) => acc + time);
+
+// const averagePlayTime = totalPlayTime / playtimes.length;
+
+// console.log(totalPlayTime);
+
+// У змінній players зберігається масив об'єктів, кожен з яких має властивості name, playtime та gamesPlayed.
+
+// Нашому сервісу необхідно розрахувати середній час, проведений в одній грі для кожного гравця, і отримати загальну суму цих значень часу у змінній totalAveragePlaytimePerGame. Розрахувати час для кожного з гравців можна, розділивши його час (властивість playtime) на кількість ігор (властивість gamesPlayed).
+
+// const players = [
+//   { name: 'Mango', playtime: 1270, gamesPlayed: 4 },
+//   { name: 'Poly', playtime: 469, gamesPlayed: 2 },
+//   { name: 'Ajax', playtime: 690, gamesPlayed: 3 },
+//   { name: 'Kiwi', playtime: 241, gamesPlayed: 1 },
+// ];
+
+// const totalAveragePlaytimePerGame = players.reduce((total, player) => {
+//   return total + player.playtime / player.gamesPlayed;
+// }, 0);
+// console.log(totalAveragePlaytimePerGame);
+
+// Доповни функцію calculateTotalBalance(users) таким чином, щоб вона рахувала і повертала суму всіх коштів (властивість balance), які зберігають користувачі з масиву users.
+
+const calculateTotalBalance = users => {};
+
+console.log(
+  calculateTotalBalance([
+    {
+      name: 'Moore Hensley',
+      email: 'moorehensley@indexia.com',
+      eyeColor: 'blue',
+      friends: ['Sharron Pace'],
+      isActive: false,
+      balance: 2811,
+      gender: 'male',
+    },
+    {
+      name: 'Sharlene Bush',
+      email: 'sharlenebush@tubesys.com',
+      eyeColor: 'blue',
+      friends: ['Briana Decker', 'Sharron Pace'],
+      isActive: true,
+      balance: 3821,
+      gender: 'female',
+    },
+    {
+      name: 'Ross Vazquez',
+      email: 'rossvazquez@xinware.com',
+      eyeColor: 'green',
+      friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+      isActive: false,
+      balance: 3793,
+      gender: 'male',
+    },
+    {
+      name: 'Elma Head',
+      email: 'elmahead@omatom.com',
+      eyeColor: 'green',
+      friends: ['Goldie Gentry', 'Aisha Tran'],
+      isActive: true,
+      balance: 2278,
+      gender: 'female',
+    },
+    {
+      name: 'Carey Barr',
+      email: 'careybarr@nurali.com',
+      eyeColor: 'blue',
+      friends: ['Jordan Sampson', 'Eddie Strong'],
+      isActive: true,
+      balance: 3951,
+      gender: 'male',
+    },
+    {
+      name: 'Blackburn Dotson',
+      email: 'blackburndotson@furnigeer.com',
+      eyeColor: 'brown',
+      friends: ['Jacklyn Lucas', 'Linda Chapman'],
+      isActive: false,
+      balance: 1498,
+      gender: 'male',
+    },
+    {
+      name: 'Sheree Anthony',
+      email: 'shereeanthony@kog.com',
+      eyeColor: 'brown',
+      friends: ['Goldie Gentry', 'Briana Decker'],
+      isActive: true,
+      balance: 2764,
+      gender: 'female',
+    },
+  ])
+);
