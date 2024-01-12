@@ -1126,72 +1126,225 @@
 
 // Доповни функцію calculateTotalBalance(users) таким чином, щоб вона рахувала і повертала суму всіх коштів (властивість balance), які зберігають користувачі з масиву users.
 
-const calculateTotalBalance = users => {};
+// const calculateTotalBalance = users => {};
 
-console.log(
-  calculateTotalBalance([
-    {
-      name: 'Moore Hensley',
-      email: 'moorehensley@indexia.com',
-      eyeColor: 'blue',
-      friends: ['Sharron Pace'],
-      isActive: false,
-      balance: 2811,
-      gender: 'male',
-    },
-    {
-      name: 'Sharlene Bush',
-      email: 'sharlenebush@tubesys.com',
-      eyeColor: 'blue',
-      friends: ['Briana Decker', 'Sharron Pace'],
-      isActive: true,
-      balance: 3821,
-      gender: 'female',
-    },
-    {
-      name: 'Ross Vazquez',
-      email: 'rossvazquez@xinware.com',
-      eyeColor: 'green',
-      friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
-      isActive: false,
-      balance: 3793,
-      gender: 'male',
-    },
-    {
-      name: 'Elma Head',
-      email: 'elmahead@omatom.com',
-      eyeColor: 'green',
-      friends: ['Goldie Gentry', 'Aisha Tran'],
-      isActive: true,
-      balance: 2278,
-      gender: 'female',
-    },
-    {
-      name: 'Carey Barr',
-      email: 'careybarr@nurali.com',
-      eyeColor: 'blue',
-      friends: ['Jordan Sampson', 'Eddie Strong'],
-      isActive: true,
-      balance: 3951,
-      gender: 'male',
-    },
-    {
-      name: 'Blackburn Dotson',
-      email: 'blackburndotson@furnigeer.com',
-      eyeColor: 'brown',
-      friends: ['Jacklyn Lucas', 'Linda Chapman'],
-      isActive: false,
-      balance: 1498,
-      gender: 'male',
-    },
-    {
-      name: 'Sheree Anthony',
-      email: 'shereeanthony@kog.com',
-      eyeColor: 'brown',
-      friends: ['Goldie Gentry', 'Briana Decker'],
-      isActive: true,
-      balance: 2764,
-      gender: 'female',
-    },
-  ])
-);
+// console.log(
+//   calculateTotalBalance([
+//     {
+//       name: 'Moore Hensley',
+//       email: 'moorehensley@indexia.com',
+//       eyeColor: 'blue',
+//       friends: ['Sharron Pace'],
+//       isActive: false,
+//       balance: 2811,
+//       gender: 'male',
+//     },
+//     {
+//       name: 'Sharlene Bush',
+//       email: 'sharlenebush@tubesys.com',
+//       eyeColor: 'blue',
+//       friends: ['Briana Decker', 'Sharron Pace'],
+//       isActive: true,
+//       balance: 3821,
+//       gender: 'female',
+//     },
+//     {
+//       name: 'Ross Vazquez',
+//       email: 'rossvazquez@xinware.com',
+//       eyeColor: 'green',
+//       friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+//       isActive: false,
+//       balance: 3793,
+//       gender: 'male',
+//     },
+//     {
+//       name: 'Elma Head',
+//       email: 'elmahead@omatom.com',
+//       eyeColor: 'green',
+//       friends: ['Goldie Gentry', 'Aisha Tran'],
+//       isActive: true,
+//       balance: 2278,
+//       gender: 'female',
+//     },
+//     {
+//       name: 'Carey Barr',
+//       email: 'careybarr@nurali.com',
+//       eyeColor: 'blue',
+//       friends: ['Jordan Sampson', 'Eddie Strong'],
+//       isActive: true,
+//       balance: 3951,
+//       gender: 'male',
+//     },
+//     {
+//       name: 'Blackburn Dotson',
+//       email: 'blackburndotson@furnigeer.com',
+//       eyeColor: 'brown',
+//       friends: ['Jacklyn Lucas', 'Linda Chapman'],
+//       isActive: false,
+//       balance: 1498,
+//       gender: 'male',
+//     },
+//     {
+//       name: 'Sheree Anthony',
+//       email: 'shereeanthony@kog.com',
+//       eyeColor: 'brown',
+//       friends: ['Goldie Gentry', 'Briana Decker'],
+//       isActive: true,
+//       balance: 2764,
+//       gender: 'female',
+//     },
+//   ])
+// );
+
+// Метод toSorted
+
+// Масив чисел
+
+// Розгляньмо приклад, де потрібно відсортувати масив scores.
+
+// Вихідний масив scores залишається незмінним. Новий масив ascendingScores містить масив чисел, що відсортований за зростанням.
+
+// const scores = [61, 19, 74, 35, 92, 56];
+// const ascendingScores = scores.toSorted();
+
+// console.log(scores); // [61, 19, 74, 35, 92, 56]
+// console.log(ascendingScores); // [19, 35, 56, 61, 74, 92]
+
+// При такому сортуванні рядки порівнюються за символами зліва направо, тобто спочатку порівнюються рядки 2 і 27. Перший символ 2 у них однаковий, але рядок 2 містить лише 1 символ, тому він менший, ніж рядок 27, і йде першим.
+
+// Потім порівнюються рядки 27 і 3. Перший символ у рядку 3 більший за перший символ 2 у рядку 27, тому 3 йде після 27.
+
+// Сортування об'єктів
+
+// Під час роботи з масивом об'єктів сортування виконується за числовим або рядковим значенням певної властивості. Наприклад, у нас є група студентів з балами за тест. Необхідно відсортувати масив об'єктів за трьома різними сценаріями:
+
+// за зростанням кількості балів
+// за спаданням кількості балів
+// за ім'ям студента в алфавітному порядку
+
+// const students = [
+//   { name: "Mango", score: 83 },
+//   { name: "Poly", score: 59 },
+//   { name: "Ajax", score: 37 },
+//   { name: "Kiwi", score: 94 },
+// ];
+
+// const inAscendingScoreOrder = students.toSorted(
+//   (firstStudent, secondStudent) => firstStudent.score - secondStudent.score
+// );
+
+// const inDescendingScoreOrder = students.toSorted(
+//   (firstStudent, secondStudent) => secondStudent.score - firstStudent.score
+// );
+
+// const inAlphabeticalOrder = students.toSorted((firstStudent, secondStudent) =>
+//   firstStudent.name.localeCompare(secondStudent.name)
+// );
+
+// Змінна authors - це масив рядків, авторів книг.
+
+// Онлайн бібліотеці необхідно відображати книги, відсортовані за автором в алфавітному і в зворотному алфавітному порядку. Доповни код таким чином, щоб у змінній authorsInAlphabetOrder вийшла копія масиву authors, відсортована за алфавітом, а у змінній authorsInReversedOrder - копія, відсортована у зворотному алфавітному порядку.
+
+// const authors = [
+//   'Tanith Lee',
+//   'Bernard Cornwell',
+//   'Robert Sheckley',
+//   'Fyodor Dostoevsky',
+//   'Howard Lovecraft',
+// ];
+
+// const authorsInAlphabetOrder = authors.toSorted((first, last) =>
+//   first.localeCompare(last)
+// );
+// console.log(authorsInAlphabetOrder);
+// const authorsInReversedOrder = authors.toSorted((first, last) =>
+//   last.localeCompare(first)
+// );
+// console.log(authorsInReversedOrder);
+
+// Масив books містить масив об'єктів книг, кожен з яких містить властивості title, author, rating.
+
+// Доповни код таким чином, щоб:
+
+// У змінній sortedByAuthorName вийшов масив книг, відсортований за ім'ям автора в алфавітному порядку.
+// У змінній sortedByReversedAuthorName вийшов масив книг, відсортований за ім'ям автора у зворотному алфавітному порядку.
+// У змінній sortedByAscendingRating вийшов масив книг, відсортований за зростанням рейтингу.
+// У змінній sortedByDescentingRating вийшов масив книг, відсортований за спаданням рейтингу.
+
+// const books = [
+//   {
+//     title: 'The Last Kingdom',
+//     author: 'Bernard Cornwell',
+//     rating: 8.38,
+//   },
+//   {
+//     title: 'Beside Still Waters',
+//     author: 'Robert Sheckley',
+//     rating: 8.51,
+//   },
+//   {
+//     title: 'The Dream of a Ridiculous Man',
+//     author: 'Fyodor Dostoevsky',
+//     rating: 7.75,
+//   },
+//   {
+//     title: 'Redder Than Blood',
+//     author: 'Tanith Lee',
+//     rating: 7.94,
+//   },
+//   {
+//     title: 'Enemy of God',
+//     author: 'Bernard Cornwell',
+//     rating: 8.67,
+//   },
+// ];
+
+// const sortedByAuthorName = books.toSorted((first, last) =>
+//   first.author.localeCompare(last.author)
+// );
+
+// const sortedByReversedAuthorName = books.toSorted((first, last) =>
+//   last.author.localeCompare(first.author)
+// );
+
+// const sortedByAscendingRating = books.toSorted(
+//   (first, last) => first.rating - last.rating
+// );
+
+// const sortedByDescentingRating = books.toSorted(
+//   (first, last) => last.rating - first.rating
+// );
+
+// Масив books містить масив об'єктів книг, кожен з яких містить властивості title, author, rating.
+
+// Доповни код таким чином, щоб у змінній names вийшов масив імен авторів в алфавітному порядку, рейтинг книг яких більший за значення змінної MIN_BOOK_RATING. Використовуй ланцюжок методів.
+
+// const books = [
+//   {
+//     title: 'The Last Kingdom',
+//     author: 'Bernard Cornwell',
+//     rating: 8.38,
+//   },
+//   {
+//     title: 'Beside Still Waters',
+//     author: 'Robert Sheckley',
+//     rating: 8.51,
+//   },
+//   {
+//     title: 'The Dream of a Ridiculous Man',
+//     author: 'Fyodor Dostoevsky',
+//     rating: 7.75,
+//   },
+//   { title: 'Redder Than Blood', author: 'Tanith Lee', rating: 7.94 },
+//   {
+//     title: 'The Dreams in the Witch House',
+//     author: 'Howard Lovecraft',
+//     rating: 8.67,
+//   },
+// ];
+// const MIN_BOOK_RATING = 8;
+
+// const names = books
+//   .filter(book => book.rating > MIN_BOOK_RATING)
+//   .map(book => book.author)
+//   .toSorted((first, last) => first.localeCompare(last));
