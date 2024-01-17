@@ -151,6 +151,9 @@
 // }
 
 // ----Стрілочні функції
+// стрілочні НЕ ВИКОРИСТУВЦЖМО ЯК МЕТОД ОБ'ЄКТУ
+// бо в стрілочних this вказує на глобальний о'єкт window
+// тож this в arrow function - useless
 
 // Звичайне оголошення функції
 // function classicAdd(a, b, c) {
@@ -577,80 +580,80 @@
 
 // Доповни функцію getUsersWithEyeColor(users, color) таким чином, щоб вона повертала масив користувачів, у яких колір очей (властивість eyeColor) збігається зі значенням другого параметра color.
 
-const getUsersWithEyeColor = (users, color) => {
-  return users.filter(user => user.eyeColor === color);
-};
+// const getUsersWithEyeColor = (users, color) => {
+//   return users.filter(user => user.eyeColor === color);
+// };
 
-console.log(
-  getUsersWithEyeColor(
-    [
-      {
-        name: 'Moore Hensley',
-        email: 'moorehensley@indexia.com',
-        eyeColor: 'blue',
-        friends: ['Sharron Pace'],
-        isActive: false,
-        balance: 2811,
-        gender: 'male',
-      },
-      {
-        name: 'Sharlene Bush',
-        email: 'sharlenebush@tubesys.com',
-        eyeColor: 'blue',
-        friends: ['Briana Decker', 'Sharron Pace'],
-        isActive: true,
-        balance: 3821,
-        gender: 'female',
-      },
-      {
-        name: 'Ross Vazquez',
-        email: 'rossvazquez@xinware.com',
-        eyeColor: 'green',
-        friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
-        isActive: false,
-        balance: 3793,
-        gender: 'male',
-      },
-      {
-        name: 'Elma Head',
-        email: 'elmahead@omatom.com',
-        eyeColor: 'green',
-        friends: ['Goldie Gentry', 'Aisha Tran'],
-        isActive: true,
-        balance: 2278,
-        gender: 'female',
-      },
-      {
-        name: 'Carey Barr',
-        email: 'careybarr@nurali.com',
-        eyeColor: 'blue',
-        friends: ['Jordan Sampson', 'Eddie Strong'],
-        isActive: true,
-        balance: 3951,
-        gender: 'male',
-      },
-      {
-        name: 'Blackburn Dotson',
-        email: 'blackburndotson@furnigeer.com',
-        eyeColor: 'brown',
-        friends: ['Jacklyn Lucas', 'Linda Chapman'],
-        isActive: false,
-        balance: 1498,
-        gender: 'male',
-      },
-      {
-        name: 'Sheree Anthony',
-        email: 'shereeanthony@kog.com',
-        eyeColor: 'brown',
-        friends: ['Goldie Gentry', 'Briana Decker'],
-        isActive: true,
-        balance: 2764,
-        gender: 'female',
-      },
-    ],
-    'brown'
-  )
-);
+// console.log(
+//   getUsersWithEyeColor(
+//     [
+//       {
+//         name: 'Moore Hensley',
+//         email: 'moorehensley@indexia.com',
+//         eyeColor: 'blue',
+//         friends: ['Sharron Pace'],
+//         isActive: false,
+//         balance: 2811,
+//         gender: 'male',
+//       },
+//       {
+//         name: 'Sharlene Bush',
+//         email: 'sharlenebush@tubesys.com',
+//         eyeColor: 'blue',
+//         friends: ['Briana Decker', 'Sharron Pace'],
+//         isActive: true,
+//         balance: 3821,
+//         gender: 'female',
+//       },
+//       {
+//         name: 'Ross Vazquez',
+//         email: 'rossvazquez@xinware.com',
+//         eyeColor: 'green',
+//         friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+//         isActive: false,
+//         balance: 3793,
+//         gender: 'male',
+//       },
+//       {
+//         name: 'Elma Head',
+//         email: 'elmahead@omatom.com',
+//         eyeColor: 'green',
+//         friends: ['Goldie Gentry', 'Aisha Tran'],
+//         isActive: true,
+//         balance: 2278,
+//         gender: 'female',
+//       },
+//       {
+//         name: 'Carey Barr',
+//         email: 'careybarr@nurali.com',
+//         eyeColor: 'blue',
+//         friends: ['Jordan Sampson', 'Eddie Strong'],
+//         isActive: true,
+//         balance: 3951,
+//         gender: 'male',
+//       },
+//       {
+//         name: 'Blackburn Dotson',
+//         email: 'blackburndotson@furnigeer.com',
+//         eyeColor: 'brown',
+//         friends: ['Jacklyn Lucas', 'Linda Chapman'],
+//         isActive: false,
+//         balance: 1498,
+//         gender: 'male',
+//       },
+//       {
+//         name: 'Sheree Anthony',
+//         email: 'shereeanthony@kog.com',
+//         eyeColor: 'brown',
+//         friends: ['Goldie Gentry', 'Briana Decker'],
+//         isActive: true,
+//         balance: 2764,
+//         gender: 'female',
+//       },
+//     ],
+//     'brown'
+//   )
+// );
 
 // Доповни код функції getUsersWithAge(users, minAge, maxAge), щоб повернути масив користувачів, вік (збережений у властивості age) яких потрапляє у заданий діапазон від minAge до maxAge.
 
