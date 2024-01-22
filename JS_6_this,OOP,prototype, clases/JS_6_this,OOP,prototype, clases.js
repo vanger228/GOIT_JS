@@ -989,6 +989,7 @@ class User {
   name;
   age;
   #gender;
+  #posts = [];
   constructor({ name, age, gender }) {
     this.name = name;
     this.age = age;
@@ -1003,6 +1004,16 @@ class User {
   get gender() {
     return this.#gender;
   }
+  get newPosts() {
+    return this.#posts;
+  }
+  set newPosts(post) {
+    this.#posts.push(...post);
+  }
+  // addPosts(newPost) {
+  //   //використовую звичайнмй метод а не set, щоб була змога додати відразу масив постів
+  //   this.#posts.push(newPost);
+  // }
 }
 
 const mir = new User({ name: 'mir', age: '21', gender: 'male' });
@@ -1011,7 +1022,11 @@ const alex = new User({ name: 'alex', age: '23', gender: 'male' });
 
 alex.gender = 'trans';
 
+alex.newPosts = ['1post', '2post', '3post'];
+// alex.addPosts = ['1post', '2post', '3post'];
+console.log(alex.newPosts);
+console.log(alex);
 console.log(mir);
 console.log(anton);
-console.log(alex, alex.gender);
-console.log(User.isNormalGender(mir));
+// console.log(alex, alex.gender);
+// console.log(User.isNormalGender(mir));
