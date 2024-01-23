@@ -1030,4 +1030,4 @@ console.log(mir);
 console.log(anton);
 // console.log(alex, alex.gender);
 // console.log(User.isNormalGender(mir));
-//jet brains
+//jetbrains
