@@ -1,0 +1,10 @@
+.styled-btn{
+  background-color: lightblue;
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.site_nav{
+  color: red;
+}
