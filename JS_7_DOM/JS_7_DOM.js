@@ -61,12 +61,16 @@
 
 // Метод toggle объекта classList добавляет класс, если его нет и удаляет, если есть.
 
-// // створення html елемента в dom
+// //---- створення html елемента в dom
 // const titleEl = document.createElement('h2');
 // titleEl.textContent = 'Hello from js';
 // console.log(titleEl);
 
 // //додаємо на сторінку
+// elem.append(el1, el2, ...) — додає один або декілька елементів після всіх дітей елемента elem.
+// elem.prepend(el1, el2, ...) — додає один або декілька елементів перед усіма дітьми елемента elem.
+// elem.after(el1, el2, ...) — додає один або декілька елементів після елемента elem.
+// elem.before(el1, el2, ...) — додає один або декілька елементів перед елементом elem.
 // const hero = document.querySelector('section.hero');
 // hero.append(titleEl); //додає елемент в кінець
 // hero.prepend(titleEl); // додає на початок
@@ -107,15 +111,21 @@
 //   { label: 'рожевий', color: '#e91e63' },
 // ];
 
-// const colorPikerContainerEl = document.querySelector('.color-piker');
+// const colorPikerContainerEl = document.querySelector('.color_piker');
 
 // options.forEach(element => {
-//   const a = document.createElement('div');
+//   const a = document.createElement('li');
 //   a.textContent = element.label;
 //   a.style.backgroundColor = element.color;
 //   a.style.color = 'white'; //таким чином можна додавати тільки inline стилі
 //   colorPikerContainerEl.append(a);
 // });
+
+// варіант з методом map
+// const markups = options
+//   .map(option => `<li style="color: ${option.color}">${option.label}</li>`)
+//   .join('');
+// colorPikerContainerEl.innerHTML = markups;
 
 // ----innerHtml
 // const titleEl1 = document.querySelector('.title1');
@@ -131,8 +141,295 @@
 
 // ----інтеграція
 
-// const titleEl = document.querySelector('h3.title3');
-// titleEl.insertAdjacentHTML('afterEnd', 'hello'); //є иакі варіки: beforeBegin, afterBegin, beforeEnd, afterEnd
-
 // data actions
 // const actions = document.querySelectorAll('.action button');
+// const technologies = ['HTML', 'CSS', 'JavaScript', 'React', 'Node'];
+// const list = document.querySelector('.list');
+
+// const markup = technologies
+//   .map(technology => `<li class="list-item">${technology}</li>`)
+//   .join('');
+
+// console.log(markup);
+
+// list.innerHTML = markup;
+
+// const data = [
+//   { title: 'Заголовок 1', content: 'Вміст 1' },
+//   { title: 'Заголовок 2', content: 'Вміст 2' },
+//   { title: 'Заголовок 3', content: 'Вміст 3' },
+//   // Додайте більше об'єктів за необхідністю
+// ];
+// const outputContainer = document.getElementById('output');
+
+// const listHeaders = data.map(
+//   article => `<li>${article.title} contain ${article.content}</li>`
+// );
+
+// console.log(listHeaders);
+// outputContainer.innerHTML = listHeaders;
+
+// const technologies = ['HTML', 'CSS', 'JavaScript', 'React', 'Node'];
+
+// const head = document.getElementById('1');
+// technologies.forEach(technologie => head.before(technologie));
+// console.log(head.textContent);
+
+// const title = document.querySelector('#output');
+// console.log(title);
+// title.insertAdjacentHTML('afterbegin', '<p>fuck</p>');
+// title.insertAdjacentHTML('afterbegin', '<div>pro</div>');
+
+// ----actions
+
+// ----Метод addEventListener()
+
+// Подія — це сигнал від браузера про те, що на вебсторінці щось відбулося. Існує багато видів подій: події миші, події клавіатури, події елементів форм, зміни розмірів вікна, завантаження зображень, буфера обміну, зміни стадії CSS анімації або переходу тощо. Події використовуються для реакції на дії користувача й виконання коду, пов'язаного з певною подією.
+
+// Для того щоб елемент реагував на дії користувача, до нього необхідно додати слухача події та визначити йому обробника.
+
+// Слухач події — це механізм, який "слухає" або "очікує" на виникнення певної події. Метод addEventListener() додає слухача події на елемент.
+
+// element.addEventListener(event, handler, options)
+
+// Аргументи методу:
+
+// event — рядок, що містить ім'я події, наприклад, "click"
+// handler — колбек-функція, яка буде викликана під час настання події
+// options — необов'язковий об'єкт параметрів із розширеними налаштуваннями
+
+// const button = document.querySelector('.my-button');
+
+// button.addEventListener('click', () => {
+//   console.log('button klicked');
+// });
+// У виклик addEventListener() першим аргументом ми передали ім’я події "click" , другим — функцію-обробник подій (event handler) — () => {console.log("Button was clicked")}. Кожного разу, коли на елементі button відбуватиметься подія "click", ця колбек-функція буде виконуватися й виводити в консоль повідомлення "The button was pressed and now the next image will appear".
+
+// Для колбека можна використовувати не анонімну, а окрему функцію, передаючи на неї посилання, як це реалізовано у прикладі нижче. Іменована функція підвищує читабельність коду.
+
+// приклад використання колбеків
+// const singleBtn = document.querySelector('#single');
+
+// const handleClick = () => {
+//   console.log('click event listener callback');
+// };
+
+// singleBtn.addEventListener('click', handleClick);
+
+// // тепер колбеки для muli btn
+// const multiBtn = document.querySelector('#multiple');
+
+// const firstCallback = () => {
+//   console.log('First callback!');
+// };
+// const secondCallback = () => {
+//   console.log('Second callback!');
+// };
+// const thirdCallback = () => {
+//   console.log('Third callback!');
+// };
+
+// multiBtn.addEventListener('click', firstCallback);
+// multiBtn.addEventListener('click', secondCallback);
+// multiBtn.addEventListener('click', thirdCallback);
+
+// ----Метод removeEventListener()
+
+// Метод removeEventListener() видаляє слухача події з елемента.
+
+// Аргументи аналогічні методу addEventListener():
+
+// element.removeEventListener(event, handler, options)
+
+// btn.removeEventListener('click', handleClick);
+
+// ----соваємо квадрат
+
+// const clickMe = document.querySelector('.js-click');
+// const box = document.querySelector('.red-square');
+// function clickHandler() {
+//   let mrgn = 0;
+//   mrgn += 10;
+//   box.style.margin = `${mrgn}px 0 0 ${mrgn}px`;
+// }
+// clickMe.addEventListener('click', clickHandler);
+// clickMe.removeEventListener('click', clickHandler);
+
+// ----input, blur
+
+// const userName = document.querySelector('.js-user-name');
+
+// function inputHandler() {
+//   console.log('input');
+// }
+// function blurHandler() {
+//   console.log('blur');
+// }
+
+// // лісенер посуті активує передачу аргументів в функцію
+// userName.addEventListener('input', inputHandler);
+// userName.addEventListener('blur', blurHandler);
+
+// ----event obj
+
+// const userName = document.querySelector('.js-user-name-1');
+
+// function inputHandler(event) {
+//   console.log(event.target.value); //event - обєкт кожного дом елемента
+// }
+// function blurHandler(event) {
+//   const name = event.target.value;
+//   if (name !== '') {
+//     alert(`Hello, ${name}`);
+//   }
+// } //при блюрі зявляй алерт з привітанням
+
+// userName.addEventListener('input', inputHandler);
+// userName.addEventListener('blur', blurHandler);
+
+// ----js form
+
+// тут ми збираємо жанні з форми в обєкт data
+// const form = document.querySelector('.js-form');
+
+// function formHandler(event) {
+//   event.preventDefault();
+//   const data = {
+//     email: event.target.email.value,
+//     password: event.target.password.value,
+//     comment: event.target.comment.value,
+//   };
+//   console.log(data);
+// }
+
+// form.addEventListener('submit', formHandler);
+
+// ----keyboard events
+
+// keydown — подія, що відбувається при натисканні клавіші
+// keyup — подія, що відбувається, коли клавішу відпустили
+// переважно обробляють тільки подію keydown, оскільки вона відбувається швидше за keyup і користувач раніше бачить результат натискання.
+
+// function keyHandler(event) {
+//   console.log('key pressed', event);
+// }
+// // document тоиу що нажим клавіші реєструється глобально
+// document.addEventListener('keydown', keyHandler);
+
+// виводимо натиснуту клавішу в html
+
+// const keyContainer = document.querySelector('.key');
+
+// function pressHandler(event) {
+//   if (event.key !== ' ') {
+//     keyContainer.textContent = event.key; //key одна з властивостей event
+//   } else {
+//     keyContainer.textContent = 'SPACE';
+//   }
+
+//   keyContainer.textContent = 'SPACE';
+// }
+
+// function upHandler() {
+//   keyContainer.textContent = null;
+// } //тепер вона зникає при upHandler
+
+// document.addEventListener('keydown', pressHandler);
+// document.addEventListener('keyup', upHandler);
+
+// приклад як зчитувати комбінації клавіш
+// не працює нажаль
+// function comboHandler(event) {
+//   // console.log(event);
+//   if (event.code === 'KeyM' && event.ctrkKey) {
+//     console.log('OK');
+//   }
+// }
+
+// document.addEventListener('keypress', comboHandler);
+
+// ----Mouse events
+
+// mouseenter - подія входження миші в елемент
+// mouseleave - подія виходу за межі елемента
+// mouseover - входження миші в елемент і в його дітей
+//mouseout - вихід з елементів і дітей
+// mousemove - виводить кожен мув миші в консоль(якщо хочимо прикріпити якийсь елемент до рухомої миші)
+
+// const boxRef = document.querySelector('.js-box');
+
+// boxRef.addEventListener('mousemove', event => {
+//   console.log(event);
+// });
+
+// ----задача
+
+// * Реалізуй пошук автомобілів по сайту
+
+// * Користувач потрапляє на сайт і одразу бачить форму для пошуку і картки всіх автомобілів (масив cars)
+
+// * Користувач може ввести в форму назву Марки або Моделі авто і в тегу селект обрати що він ввів Марку або Модель (https://prnt.sc/
+// PkkZZRy_ggtT) * Після натискання кнопки пошуку (сабміт форми) відмалюй авто які збігаються з критеріями пошуку
+
+// const cars = [
+//   {
+//     id: 1,
+//     car: 'Audi',
+//     type: 'A6',
+//     price: 30000,
+//     img: (src = './img/audi.png'),
+//   },
+//   {
+//     id: 2,
+//     car: 'BMW',
+//     type: 'X5',
+//     price: 35000,
+//     img: (src = './img/bmw.png'),
+//   },
+//   {
+//     id: 3,
+//     car: 'Wolkswagen',
+//     type: 'Golf',
+//     price: 25000,
+//     img: (src = './img/wolkswagen.png'),
+//   },
+//   {
+//     id: 4,
+//     car: 'Renault',
+//     type: 'Clio',
+//     price: 20000,
+//     img: (src = './img/renault.png'),
+//   },
+// ];
+
+// const elements = {
+//   form: document.querySelector('.js-form'),
+//   container: document.querySelector('.js-list'),
+// };
+
+// // renderCars повертає і додає всі тачки, з масиву cars в html
+// function renderCars(cars) {
+//   let html = '';
+//   for (let car of cars) {
+//     html += `<li>
+//       <span>${car.car}</span>
+//       <span>${car.type}</span>
+//       <span>${car.price}</span>
+//       <img src="${car.img}" alt="image" />
+//     </li>`;
+//   }
+//   elements.container.innerHTML = html;
+// }
+
+// function formHandler(event) {
+//   event.preventDefault();
+//   const query = event.target.query.value;
+//   const option = event.target.options.value;
+
+//   const newCars = cars.filter(car => {
+//     return car[option].toLowerCase().includes(query.toLowerCase());
+//   });
+//   renderCars(newCars);
+// }
+
+// elements.form.addEventListener('submit', formHandler);

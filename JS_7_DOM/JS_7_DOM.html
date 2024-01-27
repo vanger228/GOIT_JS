@@ -60,12 +60,82 @@
     <a id="link3-id" src="https://www.youtube.com/wat">youtube</a>
      -->
     <p>//----створюємо і дод колекцію</p>
-    <div class="color-piker"></div>
+    <ul class="color_piker"></ul>
     <p>//----innerHTML</p>
     <h1 class="title1">OK</h1>
     <p>// ----інтеграція</p>
     <h3 class="title3"></h3>
-    <script></script>
-    <script src="JS_7_DOM.js"></script>
+    <!-- <script></script> -->
+    <section>
+      <h2 id="1">Popular technologies</h2>
+      <h2 id="2">Popular technologies2</h2>
+      <h2 id="3">Popular technologies3</h2>
+      <ul class="list"></ul>
+    </section>
+    <section>
+      <h4>//----insertAdjacentHTML</h4>
+      <ul id="output">
+        <li>litsItem</li>
+      </ul>
+    </section>
+    <h2>//----Події</h2>
+    <section class="actions">
+      <button class="my-button">Next</button>
+      <hr />
+      <h4>//----приклад з декількома колбками для одного лісенера</h4>
+      <button id="single" class="btn">SINGLE CALLBACK</button>
+      <hr />
+      <button id="multiple" class="btn">MULTIPLE CALLBACKS</button>
+      <hr />
+      <p>//---соваємо квадрат</p>
+      <button class="js-click">Click me</button>
+      <div class="red-square"></div>
+      <hr />
+      <h4>//---Inputs</h4>
+      <h5>input, blur</h5>
+      <input type="text" class="js-user-name" />
+      <h5>//---event obj</h5>
+      <input type="text" class="js-user-name-1" />
+      <h5>//----event form</h5>
+      <form action="" class="js-form">
+        <input type="text" name="email" placeholder="Email" required />
+        <input type="text" name="password" placeholder="Password" required />
+        <textarea
+          type="text"
+          placeholder="Comment"
+          name="comment"
+          required
+        ></textarea>
+        <button class="submit-btn" type="submit">Submit</button>
+      </form>
+      <h3>//---Keyboard events</h3>
+      <p class="key"></p>
+      <h3>//---mouse events</h3>
+      <div class="js-box"><div class="inner-box"></div></div>
+      <p><a href="index.html">Go back</a></p>
+      <h3>//---Задача про тачки</h3>
+      <form action="submit" class="js-form car-search">
+        <div class="car-group">
+          <input
+            type="text"
+            name="query"
+            class="car-input"
+            placeholder="Пошук"
+          />
+        </div>
+
+        <div class="car-group">
+          <select name="options" class="car-select">
+            <option value="car">Марка</option>
+
+            <option value="type">Модель</option>
+          </select>
+        </div>
+
+        <button class="car-button">Пошук</button>
+      </form>
+      <ul class="js-list car-list"></ul>
+      <script src="./JS_7_DOM.js"></script>
+    </section>
   </body>
 </html>

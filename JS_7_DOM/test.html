@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <section2>
+      <h2>Popular technologies</h2>
+      <ul class="list"></ul>
+    </section2>
+    <script>
+      const technologies = ['HTML', 'CSS', 'JavaScript', 'React', 'Node'];
+      const list = document.querySelector('.list');
+
+      const markup = technologies
+        .map(technology => `<li class="list-item">${technology}</li>`)
+        .join('');
+
+      // Check the console, you'll see a single string with HTML tags
+      console.log(markup);
+
+      // Adding all the markup in one operation
+      list.innerHTML = `<ul>${markup}<ul/>`;
+    </script>
+  </body>
+</html>

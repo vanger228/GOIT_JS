@@ -8,3 +8,31 @@
 .site_nav{
   color: red;
 }
+
+.red-square{
+  height: 10px;
+  width: 10px;
+  background-color: red;
+}
+
+p.key {
+  font-size: 23px;
+  font-weight: 900;
+  color: red;
+  text-transform: uppercase;
+}
+
+.js-box {
+  height: 300px;
+  width: 300px;
+  background-color: rgb(72, 72, 235);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inner-box {
+  height: 100px;
+  width: 100px;
+  background-color: rgba(245, 177, 76, 0.811)
+}
