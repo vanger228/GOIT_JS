@@ -6,14 +6,6 @@
 
 // Розглянемо приклад: є три вкладені теги <div> з обробниками кліка на кожному з них.
 
-// <div id="parent">
-//   Parent
-//   <div id="child">
-//     Child
-//     <div id="descendant">Descendant</div>
-//   </div>
-// </div>
-
 // Спливання гарантує, що клік по #descendant викличе обробник кліка в такому порядку:
 
 //     спочатку на самому #descendant,
@@ -132,20 +124,38 @@
 //   const selectedColor = event.target.dataset.color; // користувач клікнув на кнопку і ми маємо доступ до її атрибутів
 // }
 
+// ----.closest
+// Метод Element.closest() возвращает ближайший родительский элемент (или сам элемент), который соответствует заданному CSS-селектору или null, если таковых элементов вообще нет.
+// const card = event.target.closest('.gallery-item');
+
+/* <div id="block" title="Я - блок">
+  <a href="#">Я ссылка в никуда</a>
+  <a href="http://site.ru">Я ссылка на сайт</a>
+  <div>
+    <div id="too"></div>
+  </div>
+</div>; */
+// var div = document.querySelector("#too"); //Это элемент от которого мы начнём
+// поиск div.closest("#block"); //Результат - самый первый блок древа выше
+// div.closest("div"); //Сам блок #too и будет результатом, так как он подходит
+// под селектор "div" div.closest("a"); //null - В предках #too нет ни одного
+// тега "a"! div.closest("div[title]"); //#block - так как ближе нет блоков с
+// атрибутом title.
+
 // ----Бібліотеки
 
 // Бібліотеки — це набір попередньо написаних функцій, методів і класів, який надає розробнику готові інструменти для вирішення певних завдань. Бібліотеки створюються для полегшення розробки, оскільки дають змогу використовувати готові рішення, необхідні для низки завдань, без потреби писати код з нуля.
 
-{
-  /* <body>
-  // HTML-markup
+// {
+//   /* <body>
+//   // HTML-markup
 
-  // Lodash library script file 
-  <script async src="<https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js>"></script>
-  //Your script file 
-  <script defer src="path/to/script.js"></script>
-</body> */
-}
+//   // Lodash library script file
+//   <script async src="<https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js>"></script>
+//   //Your script file
+//   <script defer src="path/to/script.js"></script>
+// </body> */
+// }
 
 //     Підключення скрипта бібліотеки має бути до підключення твого основного файлу скриптів.
 //     Не забудь додати тегу script бібліотеки атрибут async. Це потрібно для того, щоб файл бібліотеки завантажувався якомога швидше.
@@ -185,6 +195,11 @@
 //   isPublic: true,
 //   rating: 8.38,
 // };
+
+// let { title, author, genres } = book;
+
+// console.log(book);
+// console.log(genres);
 
 // // Деструктуризуємо
 // const { title, author, isPublic, rating } = book;
@@ -238,6 +253,17 @@
 //   coverImage: bookCoverImage = '<https://via.placeholder.com/640/480>',
 // } = book;
 
+// ----деструктуризація масивів
+
+// const arr = [1, 2, 3, 4, 5];
+
+// const [n1, n2, n3, n4, n5] = arr;
+// console.log(n2, n4, n5);
+
+//  ...rest розрилення, залишок масиву в масив
+// const [n1, n2, ...other] = arr;
+// console.log(n2, other);
+
 // ----Деструктуризація в циклах
 
 // Під час ітерації по масиву об'єктів циклом for...of відбуваються багаторазові звернення до властивостей об'єкта.
@@ -276,6 +302,24 @@
 // ----Деструктуризація параметрів
 
 // Під час передачі об'єктів у функції, можна деструктуризувати об'єкти, щоб отримати доступ до потрібних даних. Це дає змогу явно вказати, які поля об'єкта використовуються у функції.
+
+// деструктуризація з перейменуванням властивостей для того щоб звертатись до властивостей подібних об'єктів
+
+// const user1 = {
+//   username: 'Alex',
+//   age: 27,
+//   city: 'London',
+// };
+
+// const user2 = {
+//   username: 'Max',
+//   age: 34,
+//   city: 'LA',
+// };
+
+// const { username: un1, age: ag1, city: ct1 } = user1;
+// const { username, un2, age: ag2, city: ct2 } = user2;
+// console.log();
 
 // Без деструктуризації об'єкта:
 
@@ -320,15 +364,15 @@
 
 // В результаті виходить дуже неочевидний код у місці її виклику.
 
-function doStuffWithBook(title, pages, downloads, rating, isPublic) {
-  // Робимо щось з параметрами
-  console.log(title);
-  console.log(numberOfPages);
-  // І так далі
-}
+// function doStuffWithBook(title, pages, downloads, rating, isPublic) {
+//   // Робимо щось з параметрами
+//   console.log(title);
+//   console.log(numberOfPages);
+//   // І так далі
+// }
 
 // ❌ Що таке 736? Що таке 10283? Що таке true?
-doStuffWithBook('The Last Kingdom', 736, 10283, 8.38, true);
+// doStuffWithBook('The Last Kingdom', 736, 10283, 8.38, true);
 
 // Патерн «Об'єкт параметрів» допомагає вирішити цю проблему.
 
@@ -482,3 +526,89 @@ doStuffWithBook('The Last Kingdom', 736, 10283, 8.38, true);
 //     Короткий і читабельний код: Деструктуризація робить код коротшим і зрозумілішим. Замість довгих виразів доступу до полів об'єктів або елементів масиву, можна відразу присвоїти значення змінним зі зрозумілими іменами.
 //     Параметри функцій: При передачі об'єктів у функції, можна деструктуризувати об'єкти, щоб отримати доступ до потрібних даних. Це дозволяє явно вказати, які поля об'єкта використовуються у функції.
 //     Робота з функціями, що повертають об'єкти: Якщо функція повертає об'єкт, можна відразу деструктуризувати цей об'єкт, щоб витягти з нього значення.
+
+// const users = [
+//   {
+//     name: 'kate',
+//   },
+//   {
+//     name: 'ann',
+//   },
+//   {
+//     name: 'max',
+//   },
+// ];
+
+// const names = [];
+
+// for (let user of users) {
+//   names.push(user.name);
+// }
+
+// for (let { name } of users) {
+//   names.push(name);
+// }
+
+// const names = users.map(({ name }) => name);
+// console.log(names);
+
+// exersise
+// Use destructuring to create two new arrays:
+
+//     titlesArray: An array containing only the book titles.
+//     authorsAndGenres: An array of objects, where each object contains only the author and genre properties of the original books.
+
+// const books = [
+//   {
+//     title: 'The Lord of the Rings',
+//     author: 'J.R.R. Tolkien',
+//     genre: 'Fantasy',
+//   },
+//   { title: 'Pride and Prejudice', author: 'Jane Austen', genre: 'Romance' },
+//   {
+//     title: "The Hitchhiker's Guide to the Galaxy",
+//     author: 'Douglas Adams',
+//     genre: 'Science Fiction',
+//   },
+// ];
+
+// const titles = books.map(({ title }) => title);
+// console.log(titles);
+
+// const autorsAndGenres = books.map(({ author, genre }) => ({ author, genre }));
+// console.log(autorsAndGenres);
+
+// const user = {
+//   name: 'Jacques Gluke',
+//   tag: 'jgluke',
+//   stats: {
+//     followers: 5603,
+//     views: 4827,
+//     likes: 1308,
+//   },
+// };
+
+// function printInfo({ name, tag = 'nonetag', stats: { views } }) {
+//   console.log(`Username -> ${name}, tag -> ${tag}, views: ${views}`);
+// }
+
+// printInfo(user);
+
+const parent = document.querySelector('#parent');
+const child = document.querySelector('#child');
+const innerChild = document.querySelector('#inner-child');
+
+parent.addEventListener('click', event => {
+  console.log('parent-target', event.target);
+  console.log('parent-current-target', event.currentTarget);
+});
+
+// child.addEventListener('click', event => {
+//   console.log('Child-target', event.target);
+//   console.log('child-current-target', event.currentTarget);
+// });
+
+// innerChild.addEventListener('click', event => {
+//   console.log('inner-child-target', event.target);
+//   console.log('inner-child-currentTarget', event.currentTarget);
+// });

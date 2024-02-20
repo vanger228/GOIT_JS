@@ -6,7 +6,6 @@
     <title>Document</title>
   </head>
   <body>
-    <script type="module" src="./JS_8_event,libraries.js"></script>
     <style>
       #parent,
       #child,
@@ -41,8 +40,41 @@
       <div id="child">
         CHILD
         <div id="inner-child">INNER-CHILD</div>
+        <div id="inner-child">INNER-CHILD</div>
+        <div id="inner-child">INNER-CHILD</div>
+      </div><div id="child">
+        CHILD
+        <div id="inner-child">INNER-CHILD</div>
+        <div id="inner-child">INNER-CHILD</div>
+        <div id="inner-child">INNER-CHILD</div>
+      </div><div id="child">
+        CHILD
+        <div id="inner-child">INNER-CHILD</div>
+        <div id="inner-child">INNER-CHILD</div>
+        <div id="inner-child">INNER-CHILD</div>
       </div>
     </div>
+    <!-- <script>
+      const parent = document.querySelector('#parent');
+      const child = document.querySelector('#child');
+      const descendant = document.querySelector('#inner-child');
 
+      parent.addEventListener('click', event => {
+      console.log('parent-target', event.target);
+      console.log('parent-current-target', event.currentTarget);
+      });
+
+      child.addEventListener('click', event => {
+      console.log('Child-target', event.target);
+      console.log('child-current-target', event.currentTarget);
+      console.log('child-ev', event);
+      });
+
+      descendant.addEventListener('click', event => {
+      console.log('Descendant-target', event);
+      console.log('parent-current-descendant', event.currentTarget);
+      });
+    </script> -->
+    <script src="./JS_8_event,libraries.js"></script>
   </body>
 </html>

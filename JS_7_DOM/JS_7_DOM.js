@@ -180,6 +180,31 @@
 // title.insertAdjacentHTML('afterbegin', '<p>fuck</p>');
 // title.insertAdjacentHTML('afterbegin', '<div>pro</div>');
 
+// ----Метод insertAdjacentHTML()
+
+// Метод insertAdjacentHTML() — це сучасний метод для додавання рядка з HTML-тегами перед, після або всередину елемента. Він вирішує проблему innerHTML з повторною серіалізацією вмісту елемента під час додавання розмітки до вже існуючої.
+
+// element.insertAdjacentHTML(position, string)
+
+// Аргумент position — це рядок, який визначає позицію щодо елемента element. Він приймає одне з чотирьох значень.
+
+//     "beforebegin" — перед element
+//     "afterbegin" — всередині element, перед усіма дітьми
+//     "beforeend" — всередині element, після усіх дітей
+//     "afterend" — після element
+
+// Значення "beforebegin" і "afterend" працюють тільки тоді, коли element вже знаходиться в DOM-дереві. Обмеження зумовлене тим, що неможливо дізнатися, куди вставляти розмітку, доти, доки елемент не буде перебувати в DOM-дереві.
+
+// const list = document.querySelector('.list');
+
+// const newTechnologies = ['React', 'TypeScript', 'Node.js'];
+// const markup = newTechnologies
+//   .map(technology => `<li class="list-item new">${technology}</li>`)
+//   .join('');
+
+// list.insertAdjacentHTML('beforeend', markup);
+// list.insertAdjacentHTML('beforebegin', '<h2>Popular technologies</h2>');
+
 // ----actions
 
 // ----Метод addEventListener()
@@ -371,53 +396,53 @@
 // * Користувач може ввести в форму назву Марки або Моделі авто і в тегу селект обрати що він ввів Марку або Модель (https://prnt.sc/
 // PkkZZRy_ggtT) * Після натискання кнопки пошуку (сабміт форми) відмалюй авто які збігаються з критеріями пошуку
 
-const cars = [
-  {
-    id: 1,
-    car: 'Audi',
-    type: 'A6',
-    price: 30000,
-    img: (src = './img/audi.png'),
-  },
-  {
-    id: 2,
-    car: 'BMW',
-    type: 'X5',
-    price: 35000,
-    img: (src = './img/bmw.png'),
-  },
-  {
-    id: 3,
-    car: 'Wolkswagen',
-    type: 'Golf',
-    price: 25000,
-    img: (src = './img/wolkswagen.png'),
-  },
-  {
-    id: 4,
-    car: 'Renault',
-    type: 'Clio',
-    price: 20000,
-    img: (src = './img/renault.png'),
-  },
-];
+// const cars = [
+//   {
+//     id: 1,
+//     car: 'Audi',
+//     type: 'A6',
+//     price: 30000,
+//     img: (src = './img/audi.png'),
+//   },
+//   {
+//     id: 2,
+//     car: 'BMW',
+//     type: 'X5',
+//     price: 35000,
+//     img: (src = './img/bmw.png'),
+//   },
+//   {
+//     id: 3,
+//     car: 'Wolkswagen',
+//     type: 'Golf',
+//     price: 25000,
+//     img: (src = './img/wolkswagen.png'),
+//   },
+//   {
+//     id: 4,
+//     car: 'Renault',
+//     type: 'Clio',
+//     price: 20000,
+//     img: (src = './img/renault.png'),
+//   },
+// ];
 
-const elements = {
-  form: document.querySelector('.js-form'),
-  container: document.querySelector('.js-list'),
-};
+// const elements = {
+//   form: document.querySelector('.js-form'),
+//   container: document.querySelector('.js-list'),
+// };
 
-// renderCars повертає і додає всі тачки, з масиву cars в html
-function renderCars(cars) {}
+// // renderCars повертає і додає всі тачки, з масиву cars в html
+// function renderCars(cars) {}
 
-function formHandler(event) {
-  event.preventDefault();
-  const query = event.target.query.value;
-  const option = event.target.options.value;
+// function formHandler(event) {
+//   event.preventDefault();
+//   const query = event.target.query.value;
+//   const option = event.target.options.value;
 
-  const newCars = cars.filter(car => {
-    return car[option].toLowerCase().includes(query.toLowerCase());
-  });
-  renderCars(newCars);
-}
-elements.form.addEventListener('submit', formHandler);
+//   const newCars = cars.filter(car => {
+//     return car[option].toLowerCase().includes(query.toLowerCase());
+//   });
+//   renderCars(newCars);
+// }
+// elements.form.addEventListener('submit', formHandler);
